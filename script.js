@@ -5,7 +5,7 @@ const nav = document.querySelector('nav');
 let snacks = 6;
 
 for (let i = 0; i < snacks; i++) {
-	nav.innerHTML += `<button class="btn btn-light mb-2" id="snack1-${i+1}">Snack 1.${i+1}</button>`;
+	nav.innerHTML += `<button class="btn btn-light mb-3" id="snack1-${i+1}">Snack 1.${i+1}</button>`;
 }
 
 /*
@@ -20,25 +20,31 @@ const btnSnack1 = document.getElementById('snack1-1');
 btnSnack1.addEventListener('click', snack1);
 
 function snack1() {
+	
 	container.innerHTML = `
 		<h2>Snack 1.1</h2>
 		<p>L'utente inserisce due numeri in successione, con due prompt.
 			Il sofware stampa il maggiore.
 		</p>
+		<button id="execute-1">Execute</execute>
 	`
+	const btnExecute = document.getElementById('execute-1');
 	
-	let a = prompt('digita il primo numero');
-	let b = prompt('digita il secondo numero');
-	
-	if (a > b) {
-		checker.innerHTML = a;
-	} else if (a < b) {
-		checker.innerHTML = b;
-	} else {
-		checker.innerHTML = 'sono uguali';
+	btnExecute.addEventListener('click', execution1)
+
+	function execution1() {
+		let a = prompt('digita il primo numero');
+		let b = prompt('digita il secondo numero');
+		
+		if (a > b) {
+			checker.innerHTML = a;
+		} else if (a < b) {
+			checker.innerHTML = b;
+		} else {
+			checker.innerHTML = 'sono uguali';
+		}
 	}
 }
-
 
 /*
 SNACK 1.2
@@ -52,12 +58,15 @@ const btnSnack2 = document.getElementById('snack1-2');
 btnSnack2.addEventListener('click', snack2);
 
 function snack2() {
+
 	container.innerHTML = `
 		<h2>Snack 1.2</h2>
 		<p>L'utente iserisce due parole in successione, con due prompt.
 			Il software stampa prima la parola più corta, poi la parola più lunga.
 		</p>
+		<button id="execute-2">Execute</execute>
 	`
+	const btnExecute = document.getElementById('execute-2');
 
 	let a = prompt('inserisci una parola');
 	
@@ -80,7 +89,6 @@ function snack2() {
 	}
 }
 
-
 /*
 SNACK 1.3
 
@@ -93,12 +101,16 @@ const btnSnack3 = document.getElementById('snack1-3');
 btnSnack3.addEventListener('click', snack3);
 
 function snack3() {
+
 	container.innerHTML = `
 	<h2>Snack 1.3</h2>
 	<p>Il software deve chiedere per 10 volte all’utente di inserire un numero.
 		Il programma stampa la somma di tutti i numeri inseriti.
 	</p>
+	<button id="execute-3">Execute</execute>
 	`
+	const btnExecute = document.getElementById('execute-3');
+
 	let sum = 0;
 	
 	for (let i = 1; i <= 10; i++) {
@@ -126,7 +138,6 @@ btnSnack4.addEventListener('click', snack4);
 
 function snack4() {
 
-	
 	container.innerHTML = `
 		<h2>Snack 1.4</h2>
 		<p>In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
@@ -161,11 +172,8 @@ function snack4() {
 			checker.innerHTML = `<div>Sir, I'm terribly sorry but your name is not on the guest list. I'm afraid I'll have to ask you to leave.`
 		}
 	});
-
 }
-
-							
-							
+			
 /*
 SNACK 1.5
 
@@ -181,9 +189,10 @@ function snack5() {
 	
 	container.innerHTML = `
 		<h2>Snack 1.5</h2>
-		<p>Chiedi per 6 volte all’utente di inserire un numero,
-		se è dispari inseriscilo nell’array.</p>
+		<p>Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
+		<button id="execute-5">Execute</execute>
 	`
+	const btnExecute = document.getElementById('execute-5');
 	
 	let arr = [];
 								
@@ -197,7 +206,6 @@ function snack5() {
 	checker.innerHTML = arr;
 }
 
-	
 /*
 SNACK 1.6
 Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
@@ -208,12 +216,15 @@ const btnSnack6 = document.getElementById('snack1-6');
 btnSnack6.addEventListener('click', snack6);
 
 function snack6() {
+
 	container.innerHTML = `
-	<h2>Snack 1.6</h2>
+		<h2>Snack 1.6</h2>
 		<p>Chiedi un numero di 4 cifre all’utente
 			e calcola la somma di tutte le cifre che compongono il numero.
 		</p>
+		<button id="execute-6">Execute</execute>
 	`
+	const btnExecute = document.getElementById('execute-6');
 	
 	let input = prompt('inserisci un numero di 4 cifre');
 	
@@ -224,12 +235,12 @@ function snack6() {
 	let inputArr = [...input];
 	
 	let inputDigitSum = 0;
+
 	function digitSum(digit) {
 		inputDigitSum += parseInt(digit);
 	}
 	
 	inputArr.forEach(digitSum);
-	
 	
 	checker.innerHTML = inputDigitSum;
 }
