@@ -1,3 +1,6 @@
+const mainHtml = document.querySelector('main');
+const checker = document.querySelector('.checker');
+
 /*
 SNACK 1.1
 
@@ -73,8 +76,7 @@ no alla festa.
 
 let guestArr = ['Nick Carraway','Jay Gatsby','Daisy Buchanan','Tom Buchanan','Jordan Baker','Myrtle Wilson','George Wilson','Owl Eyes','Klipspringer','Meyer Wolfsheim'];
 
-const mainHtml = document.querySelector('main');
-mainHtml.innerHTML += `
+mainHtml.innerHTML = `
 <p>In un array sono contenuti i nomi degli invitati alla festa del grande
 Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o
 no alla festa.</p>
@@ -84,20 +86,24 @@ no alla festa.</p>
 const input = document.getElementById('guest');
 const btnCheck = document.querySelector('.check');
 
-let guestFound = false;
-let i;
-
 btnCheck.addEventListener('click', function() {
+	
+	let guestFound = false;
+	let i;
+	
 	for (i = 0; i < guestArr.length && !guestFound; i++) {
-		if (guestArr[i].toLowerCase() == input.value.toLowerCase()) {
-			guestFound = true;
+			if (guestArr[i].toLowerCase() == input.value.toLowerCase()) {
+				guestFound = true;
+			}
 		}
-	}
-
+		
+		let guestLastName = guestArr[--i].split(' ');
+		guestLastName = guestLastName[guestLastName.length - 1];
+		
 	if (guestFound) {
-		mainHtml.innerHTML += `<div>Good evening Mr. ${guestArr[--i]}. You can give me your coat, the party is this way. Thanks you for coming.</div>`
+		checker.innerHTML = `Good evening Mr. ${guestLastName}. You can give me your coat, the party is this way. Thanks you for coming.`
 	} else {
-		mainHtml.innerHTML += `<div>Sir, I'm terribly sorry but your name is not on the guest list. I'm afraid I'll have to ask you to leave.</div>`
+		checker.innerHTML = `<div>Sir, I'm terribly sorry but your name is not on the guest list. I'm afraid I'll have to ask you to leave.`
 	}
 });
 
