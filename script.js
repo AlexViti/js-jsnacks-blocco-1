@@ -116,23 +116,45 @@ Chiedi per 6 volte all’utente di inserire un numero,
 se è dispari inseriscilo nell’array.
 */
 
-mainHtml.innerHTML = `
-<p>Chiedi per 6 volte all’utente di inserire un numero,
-se è dispari inseriscilo nell’array.</p>`
+// mainHtml.innerHTML = `
+// <p>Chiedi per 6 volte all’utente di inserire un numero,
+// se è dispari inseriscilo nell’array.</p>`
 
-let arr = [];
+// let arr = [];
 
-for (let i = 0; i < 6; i++) {
-	let input = parseInt(prompt('inserisci un numero'));
-	if (input % 2 == 1) {
-		arr.push(input);
-	}
-}
+// for (let i = 0; i < 6; i++) {
+// 	let input = parseInt(prompt('inserisci un numero'));
+// 	if (input % 2 == 1) {
+// 		arr.push(input);
+// 	}
+// }
 
-checker.innerHTML = arr;
+// checker.innerHTML = arr;
 
 /*
 SNACK 1.6
 Chiedi un numero di 4 cifre all’utente
 e calcola la somma di tutte le cifre che compongono il numero.
 */
+
+mainHtml.innerHTML = `
+<p>Chiedi un numero di 4 cifre all’utente
+e calcola la somma di tutte le cifre che compongono il numero.</p>`
+
+let input = prompt('inserisci un numero di 4 cifre');
+
+while (isNaN(parseInt(input)) || parseInt(input) < 1000 || parseInt(input) > 9999) {
+	input = prompt('inserisci un numero di 4 cifre');
+}
+
+let inputArr = [...input];
+
+let inputDigitSum = 0;
+function digitSum(digit) {
+	inputDigitSum += parseInt(digit);
+ }
+
+inputArr.forEach(digitSum);
+
+
+checker.innerHTML = inputDigitSum;
