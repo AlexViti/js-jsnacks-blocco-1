@@ -2,7 +2,6 @@ const container = document.getElementById('main-container');
 const checker = document.querySelector('.checker');
 const nav = document.querySelector('nav');
 
-
 let snacks = 6;
 
 for (let i = 0; i < snacks; i++) {
@@ -54,7 +53,7 @@ btnSnack2.addEventListener('click', snack2);
 
 function snack2() {
 	container.innerHTML = `
-		<h2>Snack 1.1</h2>
+		<h2>Snack 1.2</h2>
 		<p>L'utente iserisce due parole in successione, con due prompt.
 			Il software stampa prima la parola più corta, poi la parola più lunga.
 		</p>
@@ -95,7 +94,7 @@ btnSnack3.addEventListener('click', snack3);
 
 function snack3() {
 	container.innerHTML = `
-	<h2>Snack 1.1</h2>
+	<h2>Snack 1.3</h2>
 	<p>Il software deve chiedere per 10 volte all’utente di inserire un numero.
 		Il programma stampa la somma di tutti i numeri inseriti.
 	</p>
@@ -129,6 +128,7 @@ function snack4() {
 
 	
 	container.innerHTML = `
+		<h2>Snack 1.4</h2>
 		<p>In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
 			chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 		</p>
@@ -180,8 +180,10 @@ btnSnack5.addEventListener('click', snack5);
 function snack5() {
 	
 	container.innerHTML = `
-	<p>Chiedi per 6 volte all’utente di inserire un numero,
-	se è dispari inseriscilo nell’array.</p>`
+		<h2>Snack 1.5</h2>
+		<p>Chiedi per 6 volte all’utente di inserire un numero,
+		se è dispari inseriscilo nell’array.</p>
+	`
 	
 	let arr = [];
 								
@@ -207,6 +209,7 @@ btnSnack6.addEventListener('click', snack6);
 
 function snack6() {
 	container.innerHTML = `
+	<h2>Snack 1.6</h2>
 		<p>Chiedi un numero di 4 cifre all’utente
 			e calcola la somma di tutte le cifre che compongono il numero.
 		</p>
