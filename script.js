@@ -74,38 +74,38 @@ Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o
 no alla festa.
 */
 
-let guestArr = ['Nick Carraway','Jay Gatsby','Daisy Buchanan','Tom Buchanan','Jordan Baker','Myrtle Wilson','George Wilson','Owl Eyes','Klipspringer','Meyer Wolfsheim'];
+// let guestArr = ['Nick Carraway','Jay Gatsby','Daisy Buchanan','Tom Buchanan','Jordan Baker','Myrtle Wilson','George Wilson','Owl Eyes','Klipspringer','Meyer Wolfsheim'];
 
-mainHtml.innerHTML = `
-<p>In un array sono contenuti i nomi degli invitati alla festa del grande
-Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o
-no alla festa.</p>
-<input type="text" name="guest" id="guest">
-<button class="check">Controlla</button>
-`
-const input = document.getElementById('guest');
-const btnCheck = document.querySelector('.check');
+// mainHtml.innerHTML = `
+// <p>In un array sono contenuti i nomi degli invitati alla festa del grande
+// Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o
+// no alla festa.</p>
+// <input type="text" name="guest" id="guest">
+// <button class="check">Controlla</button>
+// `
+// const input = document.getElementById('guest');
+// const btnCheck = document.querySelector('.check');
 
-btnCheck.addEventListener('click', function() {
+// btnCheck.addEventListener('click', function() {
 	
-	let guestFound = false;
-	let i;
+// 	let guestFound = false;
+// 	let i;
 	
-	for (i = 0; i < guestArr.length && !guestFound; i++) {
-			if (guestArr[i].toLowerCase() == input.value.toLowerCase()) {
-				guestFound = true;
-			}
-		}
+// 	for (i = 0; i < guestArr.length && !guestFound; i++) {
+// 			if (guestArr[i].toLowerCase() == input.value.toLowerCase()) {
+// 				guestFound = true;
+// 			}
+// 		}
 		
-		let guestLastName = guestArr[--i].split(' ');
-		guestLastName = guestLastName[guestLastName.length - 1];
+// 		let guestLastName = guestArr[--i].split(' ');
+// 		guestLastName = guestLastName[guestLastName.length - 1];
 		
-	if (guestFound) {
-		checker.innerHTML = `Good evening Mr. ${guestLastName}. You can give me your coat, the party is this way. Thanks you for coming.`
-	} else {
-		checker.innerHTML = `<div>Sir, I'm terribly sorry but your name is not on the guest list. I'm afraid I'll have to ask you to leave.`
-	}
-});
+// 	if (guestFound) {
+// 		checker.innerHTML = `Good evening Mr. ${guestLastName}. You can give me your coat, the party is this way. Thanks you for coming.`
+// 	} else {
+// 		checker.innerHTML = `<div>Sir, I'm terribly sorry but your name is not on the guest list. I'm afraid I'll have to ask you to leave.`
+// 	}
+// });
 
 
 /*
@@ -115,6 +115,21 @@ Crea un array vuoto.
 Chiedi per 6 volte all’utente di inserire un numero,
 se è dispari inseriscilo nell’array.
 */
+
+mainHtml.innerHTML = `
+<p>Chiedi per 6 volte all’utente di inserire un numero,
+se è dispari inseriscilo nell’array.</p>`
+
+let arr = [];
+
+for (let i = 0; i < 6; i++) {
+	let input = parseInt(prompt('inserisci un numero'));
+	if (input % 2 == 1) {
+		arr.push(input);
+	}
+}
+
+checker.innerHTML = arr;
 
 /*
 SNACK 1.6
