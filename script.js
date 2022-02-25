@@ -1,4 +1,4 @@
-const mainHtml = document.querySelector('main');
+const container = document.getElementById('main-container');
 const checker = document.querySelector('.checker');
 const nav = document.querySelector('nav');
 
@@ -21,16 +21,22 @@ const btnSnack1 = document.getElementById('snack1-1');
 btnSnack1.addEventListener('click', snack1);
 
 function snack1() {
+	container.innerHTML = `
+		<h2>Snack 1.1</h2>
+		<p>L'utente inserisce due numeri in successione, con due prompt.
+			Il sofware stampa il maggiore.
+		</p>
+	`
 	
 	let a = prompt('digita il primo numero');
 	let b = prompt('digita il secondo numero');
 	
 	if (a > b) {
-		alert(a)
+		checker.innerHTML = a;
 	} else if (a < b) {
-		alert(b);
+		checker.innerHTML = b;
 	} else {
-		alert('sono uguali')
+		checker.innerHTML = 'sono uguali';
 	}
 }
 
@@ -47,6 +53,13 @@ const btnSnack2 = document.getElementById('snack1-2');
 btnSnack2.addEventListener('click', snack2);
 
 function snack2() {
+	container.innerHTML = `
+		<h2>Snack 1.1</h2>
+		<p>L'utente iserisce due parole in successione, con due prompt.
+			Il software stampa prima la parola più corta, poi la parola più lunga.
+		</p>
+	`
+
 	let a = prompt('inserisci una parola');
 	
 	while (a == '') {
@@ -60,11 +73,11 @@ function snack2() {
 	}
 	
 	if(a.length == b.length) {
-		alert('Le parole hanno la stessa lunghezza: ' + a + ' ' + b);
+		checker.innerHTML = `Le parole hanno la stessa lunghezza: <br>${a.length}: ${a}; <br>${b.length}: ${b}`;
 	} else if (a.length > b.length) {
-		alert(b + ' ' + a);
+		checker.innerHTML = `${b} ${a}`;
 	} else {
-		alert(a + ' ' + b);
+		checker.innerHTML = `${a} ${b}`;
 	}
 }
 
@@ -81,6 +94,12 @@ const btnSnack3 = document.getElementById('snack1-3');
 btnSnack3.addEventListener('click', snack3);
 
 function snack3() {
+	container.innerHTML = `
+	<h2>Snack 1.1</h2>
+	<p>Il software deve chiedere per 10 volte all’utente di inserire un numero.
+		Il programma stampa la somma di tutti i numeri inseriti.
+	</p>
+	`
 	let sum = 0;
 	
 	for (let i = 1; i <= 10; i++) {
@@ -92,17 +111,14 @@ function snack3() {
 	  sum += parseInt(input);
 	}
 
-	alert("la somma dei numeri inseriti è: " + sum);
+	checker.innerHTML = `la somma dei numeri inseriti è: ${sum}`;
 }
-
-
 		
 /*
 SNACK 1.4
 
-In un array sono contenuti i nomi degli invitati alla festa del grande
-Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o
-no alla festa.
+In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
+chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 */
 
 const btnSnack4 = document.getElementById('snack1-4');
@@ -111,36 +127,37 @@ btnSnack4.addEventListener('click', snack4);
 
 function snack4() {
 
-	let guestArr =
-	 ['Nick Carraway','Jay Gatsby','Daisy Buchanan','Tom Buchanan','Jordan Baker','Myrtle Wilson','George Wilson','Owl Eyes','Klipspringer','Meyer Wolfsheim'];
 	
-	mainHtml.innerHTML = `
-	<p>In un array sono contenuti i nomi degli invitati alla festa del grande
-	Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o
-	no alla festa.</p>
-	<input type="text" name="guest" id="guest">
-	<button class="check">Controlla</button>
+	container.innerHTML = `
+		<p>In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
+			chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
+		</p>
+		
+		<input type="text" name="guest" id="guest">
+		<button class="check">Check</button>
 	`
+	let guestArr = ['Nick Carraway','Jay Gatsby','Daisy Buchanan','Tom Buchanan','Jordan Baker','Myrtle Wilson','George Wilson','Owl Eyes','Klipspringer','Meyer Wolfsheim'];
+
 	const input = document.getElementById('guest');
 	const btnCheck = document.querySelector('.check');
 	
-	btnCheck.addEventListener('click', function() {
+	btnCheck.addEventListener('click', function(){
 	
-	let guestFound = false;
-	let i;
-	
-	for (i = 0; i < guestArr.length && !guestFound; i++) {
-	if (guestArr[i].toLowerCase() == input.value.toLowerCase()) {
-			guestFound = true;
+		let guestFound = false;
+		let i;
+		
+		for (i = 0; i < guestArr.length && !guestFound; i++) {
+			if (guestArr[i].toLowerCase() == input.value.toLowerCase()) {
+				guestFound = true;
+			}
 		}
-	}
-	
-	let guestLastName = guestArr[--i].split(' ');
-	guestLastName = guestLastName[guestLastName.length - 1];
-	
-	if (guestFound) {
-		checker.innerHTML = `Good evening Mr. ${guestLastName}. You can give me your coat, the party is this way. Thanks you for coming.`
-	} else {
+		
+		let guestLastName = guestArr[--i].split(' ');
+		guestLastName = guestLastName[guestLastName.length - 1];
+		
+		if (guestFound) {
+			checker.innerHTML = `Good evening Mr. ${guestLastName}. You can give me your coat, the party is this way. Thanks you for coming.`
+		} else {
 			checker.innerHTML = `<div>Sir, I'm terribly sorry but your name is not on the guest list. I'm afraid I'll have to ask you to leave.`
 		}
 	});
@@ -153,8 +170,7 @@ function snack4() {
 SNACK 1.5
 
 Crea un array vuoto.
-Chiedi per 6 volte all’utente di inserire un numero,
-se è dispari inseriscilo nell’array.
+Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.
 */
 
 const btnSnack5 = document.getElementById('snack1-5');
@@ -163,7 +179,7 @@ btnSnack5.addEventListener('click', snack5);
 
 function snack5() {
 	
-	mainHtml.innerHTML = `
+	container.innerHTML = `
 	<p>Chiedi per 6 volte all’utente di inserire un numero,
 	se è dispari inseriscilo nell’array.</p>`
 	
@@ -182,8 +198,7 @@ function snack5() {
 	
 /*
 SNACK 1.6
-Chiedi un numero di 4 cifre all’utente
-e calcola la somma di tutte le cifre che compongono il numero.
+Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
 */
 
 const btnSnack6 = document.getElementById('snack1-6');
@@ -191,9 +206,11 @@ const btnSnack6 = document.getElementById('snack1-6');
 btnSnack6.addEventListener('click', snack6);
 
 function snack6() {
-	mainHtml.innerHTML = `
-	<p>Chiedi un numero di 4 cifre all’utente
-	e calcola la somma di tutte le cifre che compongono il numero.</p>`
+	container.innerHTML = `
+		<p>Chiedi un numero di 4 cifre all’utente
+			e calcola la somma di tutte le cifre che compongono il numero.
+		</p>
+	`
 	
 	let input = prompt('inserisci un numero di 4 cifre');
 	
@@ -206,7 +223,7 @@ function snack6() {
 	let inputDigitSum = 0;
 	function digitSum(digit) {
 		inputDigitSum += parseInt(digit);
-	 }
+	}
 	
 	inputArr.forEach(digitSum);
 	
