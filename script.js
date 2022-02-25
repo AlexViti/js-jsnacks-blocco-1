@@ -1,5 +1,13 @@
 const mainHtml = document.querySelector('main');
 const checker = document.querySelector('.checker');
+const nav = document.querySelector('nav');
+
+
+let snacks = 0;
+
+for (let i = 0; i <= snacks; i++) {
+	nav.innerHTML += `<button class="btn btn-light" id="snack1-${i+1}">Snack 1.${i+1}</button>`;
+}
 
 /*
 SNACK 1.1
@@ -8,16 +16,25 @@ L'utente inserisce due numeri in successione, con due prompt.
 Il sofware stampa il maggiore.
 */
 
-// let a = prompt('digita il primo numero');
-// let b = prompt('digita il secondo numero');
+snacks++;
+const btnSnack1 = document.getElementById('snack1-1');
 
-// if (a > b) {
-// 	alert(a)
-// } else if (a < b) {
-// 	alert(b);
-// } else {
-// 	alert('sono uguali')
-// }
+btnSnack1.addEventListener('click', snack1);
+
+function snack1() {
+	
+	let a = prompt('digita il primo numero');
+	let b = prompt('digita il secondo numero');
+	
+	if (a > b) {
+		alert(a)
+	} else if (a < b) {
+		alert(b);
+	} else {
+		alert('sono uguali')
+	}
+}
+
 
 /*
 SNACK 1.2
@@ -137,24 +154,24 @@ Chiedi un numero di 4 cifre all’utente
 e calcola la somma di tutte le cifre che compongono il numero.
 */
 
-mainHtml.innerHTML = `
-<p>Chiedi un numero di 4 cifre all’utente
-e calcola la somma di tutte le cifre che compongono il numero.</p>`
+// mainHtml.innerHTML = `
+// <p>Chiedi un numero di 4 cifre all’utente
+// e calcola la somma di tutte le cifre che compongono il numero.</p>`
 
-let input = prompt('inserisci un numero di 4 cifre');
+// let input = prompt('inserisci un numero di 4 cifre');
 
-while (isNaN(parseInt(input)) || parseInt(input) < 1000 || parseInt(input) > 9999) {
-	input = prompt('inserisci un numero di 4 cifre');
-}
+// while (isNaN(input) || parseInt(input) < 1000 || parseInt(input) > 9999) {
+// 	input = prompt('inserisci un numero di 4 cifre');
+// }
 
-let inputArr = [...input];
+// let inputArr = [...input];
 
-let inputDigitSum = 0;
-function digitSum(digit) {
-	inputDigitSum += parseInt(digit);
- }
+// let inputDigitSum = 0;
+// function digitSum(digit) {
+// 	inputDigitSum += parseInt(digit);
+//  }
 
-inputArr.forEach(digitSum);
+// inputArr.forEach(digitSum);
 
 
-checker.innerHTML = inputDigitSum;
+// checker.innerHTML = inputDigitSum;
