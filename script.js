@@ -26,13 +26,14 @@ function snack1() {
 		<p>L'utente inserisce due numeri in successione, con due prompt.
 			Il sofware stampa il maggiore.
 		</p>
-		<button id="execute-1">Execute</execute>
+		<button id="execute-1">Esegui</execute>
 	`
 	const btnExecute = document.getElementById('execute-1');
 	
-	btnExecute.addEventListener('click', execution1)
+	btnExecute.addEventListener('click', execution1);
 
 	function execution1() {
+		
 		let a = prompt('digita il primo numero');
 		let b = prompt('digita il secondo numero');
 		
@@ -58,35 +59,42 @@ const btnSnack2 = document.getElementById('snack1-2');
 btnSnack2.addEventListener('click', snack2);
 
 function snack2() {
-
+	
 	container.innerHTML = `
 		<h2>Snack 1.2</h2>
 		<p>L'utente iserisce due parole in successione, con due prompt.
 			Il software stampa prima la parola più corta, poi la parola più lunga.
 		</p>
-		<button id="execute-2">Execute</execute>
+		<button id="execute-2">Esegui</execute>
 	`
+
 	const btnExecute = document.getElementById('execute-2');
 
-	let a = prompt('inserisci una parola');
-	
-	while (a == '') {
-		a = prompt('inserisci una parola, per favore');
+	btnExecute.addEventListener('click', execution2);
+
+	function execution2() {
+
+		let a = prompt('inserisci una parola');
+		
+		while (a == '') {
+			a = prompt('inserisci una parola, per favore');
+		}
+		
+		let b = prompt("inserisci un'altra parola");
+		
+		while (b == '') {
+			b = prompt('inserisci una parola, per favore');
+		}
+		
+		if(a.length == b.length) {
+			checker.innerHTML = `Le parole hanno la stessa lunghezza: <br>${a.length}: ${a}; <br>${b.length}: ${b}`;
+		} else if (a.length > b.length) {
+			checker.innerHTML = `${b} ${a}`;
+		} else {
+			checker.innerHTML = `${a} ${b}`;
+		}
 	}
-	
-	let b = prompt("inserisci un'altra parola");
-	
-	while (b == '') {
-		b = prompt('inserisci una parola, per favore');
-	}
-	
-	if(a.length == b.length) {
-		checker.innerHTML = `Le parole hanno la stessa lunghezza: <br>${a.length}: ${a}; <br>${b.length}: ${b}`;
-	} else if (a.length > b.length) {
-		checker.innerHTML = `${b} ${a}`;
-	} else {
-		checker.innerHTML = `${a} ${b}`;
-	}
+
 }
 
 /*
@@ -107,22 +115,28 @@ function snack3() {
 	<p>Il software deve chiedere per 10 volte all’utente di inserire un numero.
 		Il programma stampa la somma di tutti i numeri inseriti.
 	</p>
-	<button id="execute-3">Execute</execute>
+	<button id="execute-3">Esegui</execute>
 	`
 	const btnExecute = document.getElementById('execute-3');
+	
+	btnExecute.addEventListener('click', execution3);
 
-	let sum = 0;
+	function execution3() {
+
+		let sum = 0;
+		
+		for (let i = 1; i <= 10; i++) {
+		  let input = prompt(`inserisci ${i}° numero`);
+		
+		  while (isNaN(input) || input == "") {
+			 input = prompt("inserisci un numero");
+		  }
+		  sum += parseInt(input);
+		}
 	
-	for (let i = 1; i <= 10; i++) {
-	  let input = prompt(`inserisci ${i}° numero`);
-	
-	  while (isNaN(input) || input == "") {
-		 input = prompt("inserisci un numero");
-	  }
-	  sum += parseInt(input);
+		checker.innerHTML = `la somma dei numeri inseriti è: ${sum}`;
 	}
 
-	checker.innerHTML = `la somma dei numeri inseriti è: ${sum}`;
 }
 		
 /*
@@ -190,20 +204,26 @@ function snack5() {
 	container.innerHTML = `
 		<h2>Snack 1.5</h2>
 		<p>Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
-		<button id="execute-5">Execute</execute>
+		<button id="execute-5">Esegui</execute>
 	`
 	const btnExecute = document.getElementById('execute-5');
-	
-	let arr = [];
-								
-	for (let i = 0; i < 6; i++) {
-		let input = parseInt(prompt('inserisci un numero'));
-		if (input % 2 == 1) {
-			arr.push(input);
+
+	btnExecute.addEventListener('click', execution5);
+
+	function execution5() {
+
+		let arr = [];
+									
+		for (let i = 0; i < 6; i++) {
+			let input = parseInt(prompt('inserisci un numero'));
+			if (input % 2 == 1) {
+				arr.push(input);
+			}
 		}
+		
+		checker.innerHTML = arr;
 	}
 	
-	checker.innerHTML = arr;
 }
 
 /*
@@ -222,25 +242,29 @@ function snack6() {
 		<p>Chiedi un numero di 4 cifre all’utente
 			e calcola la somma di tutte le cifre che compongono il numero.
 		</p>
-		<button id="execute-6">Execute</execute>
+		<button id="execute-6">Esegui</execute>
 	`
 	const btnExecute = document.getElementById('execute-6');
 	
-	let input = prompt('inserisci un numero di 4 cifre');
-	
-	while (isNaN(input) || parseInt(input) < 1000 || parseInt(input) > 9999) {
-		input = prompt('inserisci un numero di 4 cifre');
-	}
-	
-	let inputArr = [...input];
-	
-	let inputDigitSum = 0;
+	btnExecute.addEventListener('click', execution2);
 
-	function digitSum(digit) {
-		inputDigitSum += parseInt(digit);
+	function execution2() {
+
+		do {
+			input = prompt('inserisci un numero di 4 cifre');
+		} while (isNaN(input) || parseInt(input) < 1000 || parseInt(input) > 9999)
+		
+		let inputArr = [...input];
+		
+		let inputDigitSum = 0;
+	
+		function digitSum(digit) {
+			inputDigitSum += parseInt(digit);
+		}
+		
+		inputArr.forEach(digitSum);
+		
+		checker.innerHTML = inputDigitSum;
 	}
 	
-	inputArr.forEach(digitSum);
-	
-	checker.innerHTML = inputDigitSum;
 }
