@@ -16,27 +16,26 @@ snacksCounter++;
 function snack1() {
 	
 	container.innerHTML = `
-		<h2>Snack 1.1</h2>
+	<h2>Snack 1.1</h2>
 
-		<p class="assignment text-secondary bg-light p-4">L'utente inserisce due numeri in successione, con due prompt. Il sofware stampa il maggiore.</p>
+	<p class="assignment text-secondary bg-light p-4">L'utente inserisce due numeri in successione, con due prompt. Il sofware stampa il maggiore.</p>
 
-		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-		`
+	<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+	`
+	
+	checker.innerHTML = '';
+	
+	const btnExecute = document.getElementById('execute-1');
+	btnExecute.addEventListener('click', execution1);
+	
+	function execution1() {
 		
-		checker.innerHTML = '';
+		let a = prompt('digita il primo numero');
+		let b = prompt('digita il secondo numero');
 		
-		const btnExecute = document.getElementById('execute-1');
-		
-		btnExecute.addEventListener('click', execution1);
-		
-		function execution1() {
-			
-			let a = prompt('digita il primo numero');
-			let b = prompt('digita il secondo numero');
-			
-			if (a > b) {
-				checker.innerHTML = a;
-			} else if (a < b) {
+		if (a > b) {
+			checker.innerHTML = a;
+		} else if (a < b) {
 			checker.innerHTML = b;
 		} else {
 			checker.innerHTML = 'sono uguali';
@@ -65,7 +64,6 @@ function snack2() {
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-2');
-	
 	btnExecute.addEventListener('click', execution2);
 	
 	function execution2() {
@@ -114,7 +112,6 @@ function snack3() {
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-3');
-	
 	btnExecute.addEventListener('click', execution3);
 	
 	function execution3() {
@@ -217,7 +214,6 @@ function snack5() {
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-5');
-	
 	btnExecute.addEventListener('click', execution5);
 	
 	function execution5() {
@@ -264,7 +260,6 @@ function snack6() {
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-6');
-	
 	btnExecute.addEventListener('click', execution6);
 	
 	function execution6() {
