@@ -17,9 +17,9 @@ function snack1() {
 	
 	container.innerHTML = `
 		<h2>Snack 1.1</h2>
-		<p class="assignment text-secondary bg-light p-5">L'utente inserisce due numeri in successione, con due prompt.
-			Il sofware stampa il maggiore.
-			</p>
+
+		<p class="assignment text-secondary bg-light p-4">L'utente inserisce due numeri in successione, con due prompt. Il sofware stampa il maggiore.</p>
+
 		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 		`
 		
@@ -57,9 +57,9 @@ function snack2() {
 	
 	container.innerHTML = `
 	<h2>Snack 1.2</h2>
-	<p class="assignment text-secondary bg-light p-5">L'utente iserisce due parole in successione, con due prompt.
-	Il software stampa prima la parola più corta, poi la parola più lunga.
-	</p>
+
+	<p class="assignment text-secondary bg-light p-4">L'utente iserisce due parole in successione, con due prompt.	Il software stampa prima la parola più corta, poi la parola più lunga.</p>
+
 	<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
@@ -106,9 +106,9 @@ function snack3() {
 		
 	container.innerHTML = `
 	<h2>Snack 1.3</h2>
-	<p class="assignment text-secondary bg-light p-5">Il software deve chiedere per 10 volte all’utente di inserire un numero.
-	Il programma stampa la somma di tutti i numeri inseriti.
-	</p>
+
+	<p class="assignment text-secondary bg-light p-4">Il software deve chiedere per 10 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti.</p>
+
 	<button id="execute-3" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
@@ -148,8 +148,8 @@ function snack4() {
 	
 	container.innerHTML = `
 	<h2>Snack 1.4</h2>
-	<p class="assignment text-secondary bg-light p-5">In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
-	</p>
+
+	<p class="assignment text-secondary bg-light p-4">In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.</p>
 	
 	<p class="mt-4">You arrive at Gatsby's mansion at dusk, looking forward the party planned for the evening. Approaching the main door you notice the butler standing in front of it, checking the guest list and letting the gentlemen before you in. <br>
 	"Your name, Sir?"</p>
@@ -209,7 +209,9 @@ function snack5() {
 	
 	container.innerHTML = `
 	<h2>Snack 1.5</h2>
-	<p class="assignment text-secondary bg-light p-5">Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
+
+	<p class="assignment text-secondary bg-light p-4">Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
+
 	<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
@@ -234,7 +236,7 @@ function snack5() {
 			}
 		}
 		
-		checker.innerHTML = 'Numeri pari inseriti: ' + arr;
+		checker.innerHTML = 'Numeri dispari inseriti: ' + arr;
 	}
 	
 }
@@ -250,9 +252,9 @@ function snack6() {
 	
 	container.innerHTML = `
 	<h2>Snack 1.6</h2>
-	<p class="assignment text-secondary bg-light p-5">Chiedi un numero di 4 cifre all’utente
-	e calcola la somma di tutte le cifre che compongono il numero.
-	</p>
+
+	<p class="assignment text-secondary bg-light p-4">Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.</p>
+
 	<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
@@ -288,22 +290,20 @@ for (let i = 0; i < snacksCounter; i++) {
 	nav.innerHTML += `<button class="btn btn-light mb-3" id="snack1-${i+1}">Snack 1.${i+1}</button>`;
 }
 
-
 const btnSnack1 = document.getElementById('snack1-1');
-const btnSnack2 = document.getElementById('snack1-2');
-const btnSnack3 = document.getElementById('snack1-3');
-const btnSnack4 = document.getElementById('snack1-4');
-const btnSnack5 = document.getElementById('snack1-5');
-const btnSnack6 = document.getElementById('snack1-6');
-
 btnSnack1.addEventListener('click', snack1);
 
+const btnSnack2 = document.getElementById('snack1-2');
 btnSnack2.addEventListener('click', snack2);
 
+const btnSnack3 = document.getElementById('snack1-3');
 btnSnack3.addEventListener('click', snack3);
-	
+
+const btnSnack4 = document.getElementById('snack1-4');
 btnSnack4.addEventListener('click', snack4);
-	
+
+const btnSnack5 = document.getElementById('snack1-5');
 btnSnack5.addEventListener('click', snack5);
 
+const btnSnack6 = document.getElementById('snack1-6');
 btnSnack6.addEventListener('click', snack6);
