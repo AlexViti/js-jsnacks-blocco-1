@@ -28,6 +28,9 @@ function snack1() {
 		</p>
 		<button id="execute-1">Esegui</execute>
 	`
+
+	checker.innerHTML = '';
+
 	const btnExecute = document.getElementById('execute-1');
 	
 	btnExecute.addEventListener('click', execution1);
@@ -67,6 +70,7 @@ function snack2() {
 		</p>
 		<button id="execute-2">Esegui</execute>
 	`
+	checker.innerHTML = '';
 
 	const btnExecute = document.getElementById('execute-2');
 
@@ -117,6 +121,8 @@ function snack3() {
 	</p>
 	<button id="execute-3">Esegui</execute>
 	`
+	checker.innerHTML = '';
+
 	const btnExecute = document.getElementById('execute-3');
 	
 	btnExecute.addEventListener('click', execution3);
@@ -161,6 +167,8 @@ function snack4() {
 		<input type="text" name="guest" id="guest">
 		<button class="check">Check</button>
 	`
+	checker.innerHTML = '';
+
 	let guestArr = ['Nick Carraway','Jay Gatsby','Daisy Buchanan','Tom Buchanan','Jordan Baker','Myrtle Wilson','George Wilson','Owl Eyes','Klipspringer','Meyer Wolfsheim'];
 
 	const input = document.getElementById('guest');
@@ -206,6 +214,8 @@ function snack5() {
 		<p>Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
 		<button id="execute-5">Esegui</execute>
 	`
+	checker.innerHTML = '';
+
 	const btnExecute = document.getElementById('execute-5');
 
 	btnExecute.addEventListener('click', execution5);
@@ -244,6 +254,8 @@ function snack6() {
 		</p>
 		<button id="execute-6">Esegui</execute>
 	`
+	checker.innerHTML = '';
+	
 	const btnExecute = document.getElementById('execute-6');
 	
 	btnExecute.addEventListener('click', execution2);
