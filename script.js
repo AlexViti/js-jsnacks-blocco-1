@@ -1,6 +1,8 @@
 const container = document.getElementById('main-container');
 const checker = document.querySelector('.checker');
-const nav = document.querySelector('nav');
+const navLeft = document.querySelector('.nav-left');
+const navRight = document.querySelector('.nav-right');
+const footer = document.querySelector('footer');
 
 let snacksCounter = 0;
 
@@ -14,17 +16,19 @@ Il sofware stampa il maggiore.
 snacksCounter++;
 
 function snack1() {
-	
+
 	container.innerHTML = `
-		<h2>Snack 1.1</h2>
-
-		<p class="assignment text-secondary bg-light p-4">
-			L'utente inserisce due numeri in successione, con due prompt. Il sofware stampa il maggiore.
-		</p>
-
-		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+	<h2>Snack 1.1</h2>
+	
+	<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	
+	footer.innerHTML = `
+	<p class="assignment py-4">
+		L'utente inserisce due numeri in successione, con due prompt. Il sofware stampa il maggiore.
+	</p>
+	`
+
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-1');
@@ -60,12 +64,14 @@ function snack2() {
 	container.innerHTML = `
 		<h2>Snack 1.2</h2>
 
-		<p class="assignment text-secondary bg-light p-4">
-			L'utente iserisce due parole in successione, con due prompt. Il software stampa prima la parola più corta, poi la parola più lunga.
-		</p>
-
 		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
+	footer.innerHTML = `
+	<p class="assignment py-4">
+		L'utente iserisce due parole in successione, con due prompt. Il software stampa prima la parola più corta, poi la parola più lunga.
+	</p>
+	`
+	
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-2');
@@ -110,12 +116,17 @@ function snack3() {
 	container.innerHTML = `
 		<h2>Snack 1.3</h2>
 
-		<p class="assignment text-secondary bg-light p-4">
-			Il software deve chiedere per 10 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti.
-		</p>
+
 
 		<button id="execute-3" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
+
+	footer.innerHTML = `
+		<p class="assignment py-4">
+			Il software deve chiedere per 10 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti.
+		</p>
+	`
+	
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-3');
@@ -152,10 +163,6 @@ function snack4() {
 	
 	container.innerHTML = `
 		<h2>Snack 1.4</h2>
-
-		<p class="assignment text-secondary bg-light p-4">
-			In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
-		</p>
 		
 		<p class="mt-4">
 			You arrive at Gatsby's mansion at dusk, looking forward to take part of the party planned for the evening. Approaching the main door you notice the butler standing in front of it, checking the guest list and letting the gentlemen before you in. <br>
@@ -164,6 +171,11 @@ function snack4() {
 		
 		<input type="text" name="guest" id="guest">
 		<button class="check btn btn-dark rounded-pill my-3">Check</button>
+	`
+	footer.innerHTML = `
+		<p class="assignment py-4">
+			In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
+		</p>
 	`
 	checker.innerHTML = '';
 	
@@ -218,12 +230,15 @@ function snack5() {
 	container.innerHTML = `
 		<h2>Snack 1.5</h2>
 
-		<p class="assignment text-secondary bg-light p-4">
-			Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.
-		</p>
-
 		<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
+
+	footer.innerHTML =`
+		<p class="assignment py-4">
+			Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.
+		</p>
+	`
+
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-5');
@@ -266,12 +281,15 @@ function snack6() {
 	container.innerHTML = `
 		<h2>Snack 1.6</h2>
 
-		<p class="assignment text-secondary bg-light p-4">
-			Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
-		</p>
-
 		<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
+
+	footer.innerHTML = `
+		<p class="assignment py-4">
+			Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
+		</p>
+	`
+
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-6');
@@ -299,33 +317,37 @@ function snack6() {
 }
 
 /*
-SNACK 1.7
+SNACK 1.9
 
 Calcola la somma e la media dei primi 10 numeri.
 */
 
-snacksCounter++;
+snacksCounter += 3;
 
-function snack7() {
+function snack9() {
 	container.innerHTML = `
-		<h2>Snack 1.7</h2>
+		<h2>Snack 1.9</h2>
 
-		<p class="assignment text-secondary bg-light p-4">
+		<button id="execute-9" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+	`
+	
+	footer.innerHTML = `
+		<p class="assignment py-4">
 			Calcola la somma e la media dei primi 10 numeri.
 		</p>
-
-		<button id="execute-7" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
-	const btnExecute = document.getElementById('execute-7');
-	btnExecute.addEventListener('click', execution7);
 
-	function execution7() {
+	checker.innerHTML = '';
+	
+	const btnExecute = document.getElementById('execute-9');
+	btnExecute.addEventListener('click', execution9);
+
+	function execution9() {
 		
 		container.innerHTML += `
 			<div class="my-3">Seleziona un numero per calcolarne la sommatoria partendo da 1</div>
 			<input type="number" value="10" class="me-2"></input><button class="btn btn-secondary rounded-pill" id="summation-send">Invia</button>
 		`
-		checker.innerHTML = '';
 
 		const inputNumber = document.querySelector('input');
 		const sumBtn = document.getElementById('summation-send');
@@ -353,11 +375,27 @@ function snack7() {
 	}
 }
 
+/*
+SECOND BLOCK
+*/
+
+/*
+Snack 2.1
+
+Il software deve chiedere per 5 volte all’utente di inserire un numero.
+Il programma stampa la somma di tutti i numeri inseriti.
+Esegui questo programma in due versioni, con il for e con il while.
+*/
+
 
 // SNACK LINK BUTTONS
 
 for (let i = 1; i <= snacksCounter; i++) {
-	nav.innerHTML += `<button class="btn btn-light mb-3" id="snack1-${i}">Snack 1.${i}</button>`;
+	if (i <= 9) {
+		navLeft.innerHTML += `<button class="btn btn-light mb-3" id="snack1-${i}">Snack 1.${i}</button>`;
+	} else {
+		navRight.innerHTML += `<button class="btn btn-light mb-3" id="snack2-${i - 9}">Snack 2.${i - 9}</button>`;
+	}
 }
 
 const btnSnack1 = document.getElementById('snack1-1');
@@ -379,4 +417,15 @@ const btnSnack6 = document.getElementById('snack1-6');
 btnSnack6.addEventListener('click', snack6);
 
 const btnSnack7 = document.getElementById('snack1-7');
-btnSnack7.addEventListener('click', snack7);
+btnSnack7.classList.add('d-none');
+// btnSnack7.addEventListener('click', snack7);
+
+const btnSnack8 = document.getElementById('snack1-8');
+// btnSnack8.addEventListener('click', snack8);
+btnSnack8.classList.add('d-none');
+
+const btnSnack9 = document.getElementById('snack1-9');
+btnSnack9.addEventListener('click', snack9);
+
+// const btnSnack21 = document.getElementById('snack2-1');
+// btnSnack21.addEventListener('click', snack21);

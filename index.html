@@ -12,17 +12,17 @@
 </head>
 
 <style>
+
+	.center-container {
+		height: 100vh;
+	}
+
 	nav {
 		width: 100px;
 		height: 100vh;
 	}
 
-	#main-container .assignment {
-		position: absolute;
-		bottom: 0;
-	}
-
-	#main-container .assignment::before {
+	.assignment::before {
 		content: 'Consegna:';
 		display: block;
 		color: black;
@@ -32,14 +32,16 @@
 </style>
 
 <body class="d-flex">
-	<nav class="d-flex flex-column p-2 bg-dark"></nav>
-	<div class="container-fluid p-0">
+	<nav class="d-flex flex-column p-2 bg-dark nav-left"></nav>
+	<div class="container-fluid center-container p-0 d-flex flex-column">
 		<header class="bg-dark text-white text-uppercase text-center py-2 d-block"><h1>Snacks</h1></header>
 		<main>
 			<div class="container p-4" id="main-container"></div>
 			<div class="checker container mt-3 px-4"></div>
 		</main>
+		<footer class="container text-secondary bg-light mt-auto px-4"></footer>
 	</div>
+	<nav class="d-flex flex-column p-2 bg-dark nav-right"></nav>
 
 	<script src="script.js"></script>
 </body>
