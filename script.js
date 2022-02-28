@@ -225,7 +225,7 @@ function snack5() {
 		let arr = [];
 		
 		for (let i = 0; i < 6; i++) {
-			let input = parseInt(prompt(`inserisci ${i}° numero`));
+			let input = parseInt(prompt(`inserisci ${i + 1}° numero`));
 			
 			while (isNaN(input) || input == '') {
 				input = parseInt(prompt('inserisci un numero, per favore'));
@@ -236,7 +236,11 @@ function snack5() {
 			}
 		}
 		
-		checker.innerHTML = 'Numeri dispari inseriti: ' + arr;
+		if (arr.length == 0) {
+			checker.innerHTML = 'Non hai inserito numeri dispari';	
+		} else {
+			checker.innerHTML = 'Numeri dispari inseriti: ' + arr;
+		}
 	}
 	
 }
