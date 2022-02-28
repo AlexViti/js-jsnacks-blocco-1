@@ -481,11 +481,86 @@ function snack22() {
 		}
 	}
 }
+
 /*
 Snack 2.3
 
 Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.
 */
+
+snacksCounter++;
+
+function snack23() {
+	container.innerHTML = `
+		<h2>Snack 2.3</h2>
+
+		<p class="mt-4">Prendendo una lista di nomi e una di cognomi alla pressione del tasto esegui verrà generata una lista casuale di nomi e cognomi.</p>
+
+		<button id="execute-2-3" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+	`
+	
+	footer.innerHTML = `
+		<p class="container assignment py-4">
+			Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.
+		</p>
+	`
+
+	checker.innerHTML = '';
+	
+	const btnExecute = document.getElementById('execute-2-3');
+	btnExecute.addEventListener('click', execution);
+
+	const firstNameList = [
+		'Liam',
+		'Olivia',
+		'Noah',
+		'Emma',
+		'Oliver',
+		'Ava',
+		'Elijah',
+		'Charlotte',
+		'William',
+		'Sophia',
+		'James',
+		'Amelia',
+		'Benjamin',
+		'Isabella',
+		'Lucas',
+		'Mia',
+		'Henry',
+		'Evelyn',
+		'Alexander',
+		'Harper'
+	]
+
+	const lastNameList = [
+		'Smith',
+		'Johnson',
+		'Williams',
+		'Brown',
+		'Jones',
+		'Garcia',
+		'Miller',
+		'Davis',
+		'Rodriguez',
+		'Martinez',
+		'Hernandez',
+		'Lopez',
+		'Gonzales',
+		'Wilson',
+		'Anderson',
+		'Thomas',
+		'Taylor',
+		'Moore',
+		'Jackson',
+		'Martin'
+	]
+
+	function execution() {
+		
+	}
+}
+
 
 // SNACK LINK BUTTONS
 
@@ -531,3 +606,6 @@ btnSnack21.addEventListener('click', snack21);
 
 const btnSnack22 = document.getElementById('snack2-2');
 btnSnack22.addEventListener('click', snack22);
+
+const btnSnack23 = document.getElementById('snack2-3');
+btnSnack23.addEventListener('click', snack23);
