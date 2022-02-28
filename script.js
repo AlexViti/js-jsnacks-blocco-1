@@ -2,11 +2,7 @@ const container = document.getElementById('main-container');
 const checker = document.querySelector('.checker');
 const nav = document.querySelector('nav');
 
-let snacks = 6;
-
-for (let i = 0; i < snacks; i++) {
-	nav.innerHTML += `<button class="btn btn-light mb-3" id="snack1-${i+1}">Snack 1.${i+1}</button>`;
-}
+let snacksCounter = 0;
 
 /*
 SNACK 1.1
@@ -15,9 +11,7 @@ L'utente inserisce due numeri in successione, con due prompt.
 Il sofware stampa il maggiore.
 */
 
-const btnSnack1 = document.getElementById('snack1-1');
-
-btnSnack1.addEventListener('click', snack1);
+snacksCounter++;
 
 function snack1() {
 	
@@ -25,24 +19,24 @@ function snack1() {
 		<h2>Snack 1.1</h2>
 		<p class="assignment text-secondary bg-light p-5">L'utente inserisce due numeri in successione, con due prompt.
 			Il sofware stampa il maggiore.
-		</p>
+			</p>
 		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-	`
-
-	checker.innerHTML = '';
-
-	const btnExecute = document.getElementById('execute-1');
-	
-	btnExecute.addEventListener('click', execution1);
-
-	function execution1() {
+		`
 		
-		let a = prompt('digita il primo numero');
-		let b = prompt('digita il secondo numero');
+		checker.innerHTML = '';
 		
-		if (a > b) {
-			checker.innerHTML = a;
-		} else if (a < b) {
+		const btnExecute = document.getElementById('execute-1');
+		
+		btnExecute.addEventListener('click', execution1);
+		
+		function execution1() {
+			
+			let a = prompt('digita il primo numero');
+			let b = prompt('digita il secondo numero');
+			
+			if (a > b) {
+				checker.innerHTML = a;
+			} else if (a < b) {
 			checker.innerHTML = b;
 		} else {
 			checker.innerHTML = 'sono uguali';
@@ -57,27 +51,25 @@ L'utente iserisce due parole in successione, con due prompt.
 Il software stampa prima la parola più corta, poi la parola più lunga.
 */
 
-const btnSnack2 = document.getElementById('snack1-2');
-
-btnSnack2.addEventListener('click', snack2);
+snacksCounter++;
 
 function snack2() {
 	
 	container.innerHTML = `
-		<h2>Snack 1.2</h2>
-		<p class="assignment text-secondary bg-light p-5">L'utente iserisce due parole in successione, con due prompt.
-			Il software stampa prima la parola più corta, poi la parola più lunga.
-		</p>
-		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+	<h2>Snack 1.2</h2>
+	<p class="assignment text-secondary bg-light p-5">L'utente iserisce due parole in successione, con due prompt.
+	Il software stampa prima la parola più corta, poi la parola più lunga.
+	</p>
+	<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
-
+	
 	const btnExecute = document.getElementById('execute-2');
-
+	
 	btnExecute.addEventListener('click', execution2);
-
+	
 	function execution2() {
-
+			
 		let a = prompt('inserisci una parola');
 		
 		while (a == '') {
@@ -98,7 +90,7 @@ function snack2() {
 			checker.innerHTML = `${a} ${b}`;
 		}
 	}
-
+	
 }
 
 /*
@@ -108,43 +100,41 @@ Il software deve chiedere per 10 volte all’utente di inserire un numero.
 Il programma stampa la somma di tutti i numeri inseriti.
 */
 
-const btnSnack3 = document.getElementById('snack1-3');
-
-btnSnack3.addEventListener('click', snack3);
+snacksCounter++;
 
 function snack3() {
-
+		
 	container.innerHTML = `
 	<h2>Snack 1.3</h2>
 	<p class="assignment text-secondary bg-light p-5">Il software deve chiedere per 10 volte all’utente di inserire un numero.
-		Il programma stampa la somma di tutti i numeri inseriti.
+	Il programma stampa la somma di tutti i numeri inseriti.
 	</p>
 	<button id="execute-3" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
-
+	
 	const btnExecute = document.getElementById('execute-3');
 	
 	btnExecute.addEventListener('click', execution3);
-
+	
 	function execution3() {
-
+		
 		let sum = 0;
 		
 		for (let i = 1; i <= 10; i++) {
-		  let input = prompt(`inserisci ${i}° numero`);
-		
-		  while (isNaN(input) || input == "") {
-			 input = prompt("inserisci un numero");
-		  }
-		  sum += parseInt(input);
+			let input = prompt(`inserisci ${i}° numero`);
+			
+			while (isNaN(input) || input == "") {
+				input = prompt("inserisci un numero");
+			}
+			sum += parseInt(input);
 		}
-	
+		
 		checker.innerHTML = `la somma dei numeri inseriti è: ${sum}`;
 	}
-
+	
 }
-		
+
 /*
 SNACK 1.4
 
@@ -152,25 +142,23 @@ In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
 chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 */
 
-const btnSnack4 = document.getElementById('snack1-4');
-
-btnSnack4.addEventListener('click', snack4);
+snacksCounter++;
 
 function snack4() {
-
+	
 	container.innerHTML = `
-		<h2>Snack 1.4</h2>
-		<p class="assignment text-secondary bg-light p-5">In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
-		</p>
-
-		<p class="mt-4">You arrive at Gatsby's mansion at dusk, looking forward the party planned for the evening. Approaching the main door you notice the butler standing in front of it, checking the guest list and letting the gentlemen before you in. <br>
-		"Your name, Sir?"</p>
-		
-		<input type="text" name="guest" id="guest">
-		<button class="check btn btn-dark rounded-pill my-3">Check</button>
+	<h2>Snack 1.4</h2>
+	<p class="assignment text-secondary bg-light p-5">In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
+	</p>
+	
+	<p class="mt-4">You arrive at Gatsby's mansion at dusk, looking forward the party planned for the evening. Approaching the main door you notice the butler standing in front of it, checking the guest list and letting the gentlemen before you in. <br>
+	"Your name, Sir?"</p>
+	
+	<input type="text" name="guest" id="guest">
+	<button class="check btn btn-dark rounded-pill my-3">Check</button>
 	`
 	checker.innerHTML = '';
-
+	
 	let guestArr = [
 		'Nick Carraway',
 		'Daisy Buchanan',
@@ -182,12 +170,12 @@ function snack4() {
 		'Klipspringer',
 		'Meyer Wolfsheim'
 	];
-
+	
 	const input = document.getElementById('guest');
 	const btnCheck = document.querySelector('.check');
 	
 	btnCheck.addEventListener('click', function(){
-	
+		
 		let guestFound = false;
 		let i;
 		
@@ -207,7 +195,7 @@ function snack4() {
 		}
 	});
 }
-			
+
 /*
 SNACK 1.5
 
@@ -215,34 +203,32 @@ Crea un array vuoto.
 Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.
 */
 
-const btnSnack5 = document.getElementById('snack1-5');
-
-btnSnack5.addEventListener('click', snack5);
+snacksCounter++;
 
 function snack5() {
 	
 	container.innerHTML = `
-		<h2>Snack 1.5</h2>
-		<p class="assignment text-secondary bg-light p-5">Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
-		<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+	<h2>Snack 1.5</h2>
+	<p class="assignment text-secondary bg-light p-5">Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
+	<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
-
+	
 	const btnExecute = document.getElementById('execute-5');
-
+	
 	btnExecute.addEventListener('click', execution5);
-
+	
 	function execution5() {
-
+		
 		let arr = [];
-									
+		
 		for (let i = 0; i < 6; i++) {
 			let input = parseInt(prompt(`inserisci ${i}° numero`));
-
+			
 			while (isNaN(input) || input == '') {
 				input = parseInt(prompt('inserisci un numero, per favore'));
 			}
-
+			
 			if (input % 2 == 1) {
 				arr.push(input);
 			}
@@ -258,27 +244,25 @@ SNACK 1.6
 Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
 */
 
-const btnSnack6 = document.getElementById('snack1-6');
-
-btnSnack6.addEventListener('click', snack6);
+snacksCounter++;
 
 function snack6() {
-
+	
 	container.innerHTML = `
-		<h2>Snack 1.6</h2>
-		<p class="assignment text-secondary bg-light p-5">Chiedi un numero di 4 cifre all’utente
-			e calcola la somma di tutte le cifre che compongono il numero.
-		</p>
-		<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+	<h2>Snack 1.6</h2>
+	<p class="assignment text-secondary bg-light p-5">Chiedi un numero di 4 cifre all’utente
+	e calcola la somma di tutte le cifre che compongono il numero.
+	</p>
+	<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
-
+	
 	const btnExecute = document.getElementById('execute-6');
 	
 	btnExecute.addEventListener('click', execution6);
-
+	
 	function execution6() {
-
+		
 		do {
 			input = prompt('inserisci un numero di 4 cifre');
 		} while (isNaN(input) || parseInt(input) < 1000 || parseInt(input) > 9999)
@@ -286,7 +270,7 @@ function snack6() {
 		let inputArr = [...input];
 		
 		let inputDigitSum = 0;
-	
+		
 		function digitSum(digit) {
 			inputDigitSum += parseInt(digit);
 		}
@@ -297,3 +281,29 @@ function snack6() {
 	}
 	
 }
+
+// SNACK LINK BUTTONS
+
+for (let i = 0; i < snacks; i++) {
+	nav.innerHTML += `<button class="btn btn-light mb-3" id="snack1-${i+1}">Snack 1.${i+1}</button>`;
+}
+
+
+const btnSnack1 = document.getElementById('snack1-1');
+const btnSnack2 = document.getElementById('snack1-2');
+const btnSnack3 = document.getElementById('snack1-3');
+const btnSnack4 = document.getElementById('snack1-4');
+const btnSnack5 = document.getElementById('snack1-5');
+const btnSnack6 = document.getElementById('snack1-6');
+
+btnSnack1.addEventListener('click', snack1);
+
+btnSnack2.addEventListener('click', snack2);
+
+btnSnack3.addEventListener('click', snack3);
+	
+btnSnack4.addEventListener('click', snack4);
+	
+btnSnack5.addEventListener('click', snack5);
+
+btnSnack6.addEventListener('click', snack6);
