@@ -23,7 +23,7 @@ function snack1() {
 	
 	container.innerHTML = `
 		<h2>Snack 1.1</h2>
-		<p>L'utente inserisce due numeri in successione, con due prompt.
+		<p class="assignment text-secondary bg-light p-5">L'utente inserisce due numeri in successione, con due prompt.
 			Il sofware stampa il maggiore.
 		</p>
 		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
@@ -65,7 +65,7 @@ function snack2() {
 	
 	container.innerHTML = `
 		<h2>Snack 1.2</h2>
-		<p>L'utente iserisce due parole in successione, con due prompt.
+		<p class="assignment text-secondary bg-light p-5">L'utente iserisce due parole in successione, con due prompt.
 			Il software stampa prima la parola più corta, poi la parola più lunga.
 		</p>
 		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
@@ -116,7 +116,7 @@ function snack3() {
 
 	container.innerHTML = `
 	<h2>Snack 1.3</h2>
-	<p>Il software deve chiedere per 10 volte all’utente di inserire un numero.
+	<p class="assignment text-secondary bg-light p-5">Il software deve chiedere per 10 volte all’utente di inserire un numero.
 		Il programma stampa la somma di tutti i numeri inseriti.
 	</p>
 	<button id="execute-3" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
@@ -160,16 +160,28 @@ function snack4() {
 
 	container.innerHTML = `
 		<h2>Snack 1.4</h2>
-		<p>In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
-			chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
+		<p class="assignment text-secondary bg-light p-5">In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 		</p>
+
+		<p class="mt-4">You arrive at Gatsby's mansion at dusk, looking forward the party planned for the evening. Approaching the main door you notice the butler standing in front of it, checking the guest list and letting the gentlemen before you in. <br>
+		"Your name, Sir?"</p>
 		
 		<input type="text" name="guest" id="guest">
-		<button class="check">Check</button>
+		<button class="check btn btn-dark rounded-pill my-3">Check</button>
 	`
 	checker.innerHTML = '';
 
-	let guestArr = ['Nick Carraway','Jay Gatsby','Daisy Buchanan','Tom Buchanan','Jordan Baker','Myrtle Wilson','George Wilson','Owl Eyes','Klipspringer','Meyer Wolfsheim'];
+	let guestArr = [
+		'Nick Carraway',
+		'Daisy Buchanan',
+		'Tom Buchanan',
+		'Jordan Baker',
+		'Myrtle Wilson',
+		'George Wilson',
+		'Owl Eyes',
+		'Klipspringer',
+		'Meyer Wolfsheim'
+	];
 
 	const input = document.getElementById('guest');
 	const btnCheck = document.querySelector('.check');
@@ -211,7 +223,7 @@ function snack5() {
 	
 	container.innerHTML = `
 		<h2>Snack 1.5</h2>
-		<p>Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
+		<p class="assignment text-secondary bg-light p-5">Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
 		<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
 	`
 	checker.innerHTML = '';
@@ -249,7 +261,7 @@ function snack6() {
 
 	container.innerHTML = `
 		<h2>Snack 1.6</h2>
-		<p>Chiedi un numero di 4 cifre all’utente
+		<p class="assignment text-secondary bg-light p-5">Chiedi un numero di 4 cifre all’utente
 			e calcola la somma di tutte le cifre che compongono il numero.
 		</p>
 		<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
