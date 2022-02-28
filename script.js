@@ -26,7 +26,7 @@ function snack1() {
 		<p>L'utente inserisce due numeri in successione, con due prompt.
 			Il sofware stampa il maggiore.
 		</p>
-		<button id="execute-1">Esegui</execute>
+		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
 	`
 
 	checker.innerHTML = '';
@@ -68,7 +68,7 @@ function snack2() {
 		<p>L'utente iserisce due parole in successione, con due prompt.
 			Il software stampa prima la parola più corta, poi la parola più lunga.
 		</p>
-		<button id="execute-2">Esegui</execute>
+		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
 	`
 	checker.innerHTML = '';
 
@@ -119,7 +119,7 @@ function snack3() {
 	<p>Il software deve chiedere per 10 volte all’utente di inserire un numero.
 		Il programma stampa la somma di tutti i numeri inseriti.
 	</p>
-	<button id="execute-3">Esegui</execute>
+	<button id="execute-3" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
 	`
 	checker.innerHTML = '';
 
@@ -212,7 +212,7 @@ function snack5() {
 	container.innerHTML = `
 		<h2>Snack 1.5</h2>
 		<p>Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
-		<button id="execute-5">Esegui</execute>
+		<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
 	`
 	checker.innerHTML = '';
 
@@ -252,10 +252,10 @@ function snack6() {
 		<p>Chiedi un numero di 4 cifre all’utente
 			e calcola la somma di tutte le cifre che compongono il numero.
 		</p>
-		<button id="execute-6">Esegui</execute>
+		<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
 	`
 	checker.innerHTML = '';
-	
+
 	const btnExecute = document.getElementById('execute-6');
 	
 	btnExecute.addEventListener('click', execution2);
