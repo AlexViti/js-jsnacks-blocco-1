@@ -420,7 +420,7 @@ function snack21() {
 			let inputNumber = parseInt(prompt(`Inserisci ${i}° numero`));
 			
 			while (isNaN(inputNumber)) {
-				inputNumber = prompt('Inserisci un numero per cortesia')
+				inputNumber = parseInt(prompt('Inserisci un numero per cortesia'));
 			}
 			sum += inputNumber
 		}
@@ -434,7 +434,7 @@ function snack21() {
 			let inputNumber = parseInt(prompt(`Inserisci ${++i}° numero`));
 			
 			while (isNaN(inputNumber)) {
-				inputNumber = prompt('Inserisci un numero per cortesia')
+				inputNumber = parseInt(prompt('Inserisci un numero per cortesia'));
 			}
 			sum += inputNumber
 		} while (i < 5)
