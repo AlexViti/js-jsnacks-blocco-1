@@ -387,6 +387,60 @@ Il programma stampa la somma di tutti i numeri inseriti.
 Esegui questo programma in due versioni, con il for e con il while.
 */
 
+snacksCounter++;
+
+function snack21() {
+	container.innerHTML = `
+		<h2>Snack 2.1</h2>
+
+		<p class="mt-4">Inserisci 5 numeri tramite prompt dopo aver cliccato uno dei tasti esegui. Il programma ne restituirà la somma</p>
+
+		<button id="execute-2-1-for" class='btn btn-dark rounded-pill my-3'>Esegui con il ciclo for</button>
+		<button id="execute-2-1-while" class='btn btn-dark rounded-pill my-3'>Esegui con il ciclo while</button>
+	`
+	
+	footer.innerHTML = `
+		<p class="assignment py-4">
+			Il software deve chiedere per 5 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti. Esegui questo programma in due versioni, con il for e con il while.
+		</p>
+	`
+
+	checker.innerHTML = '';
+	
+	const btnExecuteFor = document.getElementById('execute-2-1-for');
+	btnExecuteFor.addEventListener('click', executionFor);
+
+	const btnExecuteWhile = document.getElementById('execute-2-1-while');
+	btnExecuteWhile.addEventListener('click', executionWhile);
+	
+	function executionFor() {
+		let sum = 0;
+
+		for (let i = 1; i <= 5; i++) {
+			let inputNumber = parseInt(prompt(`Inserisci ${i}° numero`));
+			
+			while (isNaN(inputNumber)) {
+				inputNumber = prompt('Inserisci un numero per cortesia')
+			}
+			sum += inputNumber
+		}
+		checker.innerHTML = `La somma dei numeri immessi è: ${sum}`;
+	}
+
+	function executionWhile() {
+		let sum = 0;
+		let i = 0;
+		do {
+			let inputNumber = parseInt(prompt(`Inserisci ${++i}° numero`));
+			
+			while (isNaN(inputNumber)) {
+				inputNumber = prompt('Inserisci un numero per cortesia')
+			}
+			sum += inputNumber
+		} while (i < 5)
+		checker.innerHTML = `La somma dei numeri immessi è: ${sum}`;
+	}
+}
 
 // SNACK LINK BUTTONS
 
@@ -427,5 +481,5 @@ btnSnack8.classList.add('d-none');
 const btnSnack9 = document.getElementById('snack1-9');
 btnSnack9.addEventListener('click', snack9);
 
-// const btnSnack21 = document.getElementById('snack2-1');
-// btnSnack21.addEventListener('click', snack21);
+const btnSnack21 = document.getElementById('snack2-1');
+btnSnack21.addEventListener('click', snack21);
