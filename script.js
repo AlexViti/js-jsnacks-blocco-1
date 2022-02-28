@@ -284,7 +284,7 @@ function snack6() {
 
 // SNACK LINK BUTTONS
 
-for (let i = 0; i < snacks; i++) {
+for (let i = 0; i < snacksCounter; i++) {
 	nav.innerHTML += `<button class="btn btn-light mb-3" id="snack1-${i+1}">Snack 1.${i+1}</button>`;
 }
 
