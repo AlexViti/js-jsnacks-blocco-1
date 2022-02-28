@@ -24,7 +24,7 @@ function snack1() {
 	`
 	
 	footer.innerHTML = `
-	<p class="assignment py-4">
+	<p class="container assignment py-4">
 		L'utente inserisce due numeri in successione, con due prompt. Il sofware stampa il maggiore.
 	</p>
 	`
@@ -67,7 +67,7 @@ function snack2() {
 		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	footer.innerHTML = `
-	<p class="assignment py-4">
+	<p class="container assignment py-4">
 		L'utente iserisce due parole in successione, con due prompt. Il software stampa prima la parola più corta, poi la parola più lunga.
 	</p>
 	`
@@ -122,7 +122,7 @@ function snack3() {
 	`
 
 	footer.innerHTML = `
-		<p class="assignment py-4">
+		<p class="container assignment py-4">
 			Il software deve chiedere per 10 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti.
 		</p>
 	`
@@ -173,7 +173,7 @@ function snack4() {
 		<button class="check btn btn-dark rounded-pill my-3">Check</button>
 	`
 	footer.innerHTML = `
-		<p class="assignment py-4">
+		<p class="container assignment py-4">
 			In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 		</p>
 	`
@@ -234,7 +234,7 @@ function snack5() {
 	`
 
 	footer.innerHTML =`
-		<p class="assignment py-4">
+		<p class="container assignment py-4">
 			Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.
 		</p>
 	`
@@ -285,7 +285,7 @@ function snack6() {
 	`
 
 	footer.innerHTML = `
-		<p class="assignment py-4">
+		<p class="container assignment py-4">
 			Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
 		</p>
 	`
@@ -332,7 +332,7 @@ function snack9() {
 	`
 	
 	footer.innerHTML = `
-		<p class="assignment py-4">
+		<p class="container assignment py-4">
 			Calcola la somma e la media dei primi 10 numeri.
 		</p>
 	`
@@ -400,7 +400,7 @@ function snack21() {
 	`
 	
 	footer.innerHTML = `
-		<p class="assignment py-4">
+		<p class="container assignment py-4">
 			Il software deve chiedere per 5 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti. Esegui questo programma in due versioni, con il for e con il while.
 		</p>
 	`
@@ -441,6 +441,52 @@ function snack21() {
 		checker.innerHTML = `La somma dei numeri immessi è: ${sum}`;
 	}
 }
+
+/*
+Snack 2.2
+
+Inserisci un numero, se è pari stampa il numero,
+se è dispari stampa il numero successivo
+*/
+
+snacksCounter++;
+
+function snack22() {
+	container.innerHTML = `
+		<h2>Snack 2.2</h2>
+
+		<p class="mt-4">Inserisci un numero nell'input sottostante, se è pari verrà stampato, altrimenti verrà stampato il numero pari successivo.</p>
+
+		<input type="number" class"me-2">
+		<button id="execute-2-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+	`
+	
+	footer.innerHTML = `
+		<p class="container assignment py-4">
+			Inserisci un numero, se è pari stampa il numero, se è dispari stampa il numero successivo.
+		</p>
+	`
+
+	checker.innerHTML = '';
+	
+	const btnExecute = document.getElementById('execute-2-2');
+	btnExecute.addEventListener('click', execution);
+	const inputNumber = document.querySelector('input');
+
+	function execution() {
+
+		if (inputNumber.value % 2 == 0) {
+			checker.innerHTML = `Il numero era pari: ${inputNumber.value}`;
+		} else {
+			checker.innerHTML = `Il numero era dispari, li numero successivo è: ${parseInt(inputNumber.value) + 1}`;
+		}
+	}
+}
+/*
+Snack 2.3
+
+Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.
+*/
 
 // SNACK LINK BUTTONS
 
@@ -483,3 +529,6 @@ btnSnack9.addEventListener('click', snack9);
 
 const btnSnack21 = document.getElementById('snack2-1');
 btnSnack21.addEventListener('click', snack21);
+
+const btnSnack22 = document.getElementById('snack2-2');
+btnSnack22.addEventListener('click', snack22);
