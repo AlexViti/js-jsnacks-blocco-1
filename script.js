@@ -26,7 +26,7 @@ function snack1() {
 		<p class="assignment text-secondary bg-light p-5">L'utente inserisce due numeri in successione, con due prompt.
 			Il sofware stampa il maggiore.
 		</p>
-		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
+		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 
 	checker.innerHTML = '';
@@ -68,7 +68,7 @@ function snack2() {
 		<p class="assignment text-secondary bg-light p-5">L'utente iserisce due parole in successione, con due prompt.
 			Il software stampa prima la parola più corta, poi la parola più lunga.
 		</p>
-		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
+		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
 
@@ -119,7 +119,7 @@ function snack3() {
 	<p class="assignment text-secondary bg-light p-5">Il software deve chiedere per 10 volte all’utente di inserire un numero.
 		Il programma stampa la somma di tutti i numeri inseriti.
 	</p>
-	<button id="execute-3" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
+	<button id="execute-3" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
 
@@ -224,7 +224,7 @@ function snack5() {
 	container.innerHTML = `
 		<h2>Snack 1.5</h2>
 		<p class="assignment text-secondary bg-light p-5">Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.</p>
-		<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
+		<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
 
@@ -237,13 +237,18 @@ function snack5() {
 		let arr = [];
 									
 		for (let i = 0; i < 6; i++) {
-			let input = parseInt(prompt('inserisci un numero'));
+			let input = parseInt(prompt(`inserisci ${i}° numero`));
+
+			while (isNaN(input) || input == '') {
+				input = parseInt(prompt('inserisci un numero, per favore'));
+			}
+
 			if (input % 2 == 1) {
 				arr.push(input);
 			}
 		}
 		
-		checker.innerHTML = arr;
+		checker.innerHTML = 'Numeri pari inseriti: ' + arr;
 	}
 	
 }
@@ -264,15 +269,15 @@ function snack6() {
 		<p class="assignment text-secondary bg-light p-5">Chiedi un numero di 4 cifre all’utente
 			e calcola la somma di tutte le cifre che compongono il numero.
 		</p>
-		<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</execute>
+		<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	checker.innerHTML = '';
 
 	const btnExecute = document.getElementById('execute-6');
 	
-	btnExecute.addEventListener('click', execution2);
+	btnExecute.addEventListener('click', execution6);
 
-	function execution2() {
+	function execution6() {
 
 		do {
 			input = prompt('inserisci un numero di 4 cifre');
