@@ -457,7 +457,7 @@ function snack22() {
 
 		<p class="mt-4">Inserisci un numero nell'input sottostante, se è pari verrà stampato, altrimenti verrà stampato il numero pari successivo.</p>
 
-		<input type="number" class"me-2">
+		<input type="number" value="0" min="0" step="1" class="me-2">
 		<button id="execute-2-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	
@@ -474,7 +474,6 @@ function snack22() {
 	const inputNumber = document.querySelector('input');
 
 	function execution() {
-
 		if (inputNumber.value % 2 == 0) {
 			checker.innerHTML = `Il numero era pari: ${inputNumber.value}`;
 		} else {
