@@ -557,6 +557,9 @@ function snack23() {
 	]
 
 	function execution23() {
+
+		checker.innerHTML = `<ol></ol>`;
+		let outputList = document.querySelector('ol')
 		const fakeGuestList = [];
 
 		let i = 0;
@@ -573,7 +576,9 @@ function snack23() {
 			}
 		} while (i < 3)
 
-		checker.innerHTML = fakeGuestList;
+		for (let j = 0; j < fakeGuestList.length; j++) {
+			outputList.innerHTML += `<li>${fakeGuestList[j]}</li>`;
+		}
 	}
 }
 
