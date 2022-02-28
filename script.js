@@ -508,7 +508,7 @@ function snack23() {
 	checker.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-2-3');
-	btnExecute.addEventListener('click', execution);
+	btnExecute.addEventListener('click', execution23);
 
 	const firstNameList = [
 		'Liam',
@@ -556,8 +556,24 @@ function snack23() {
 		'Martin'
 	]
 
-	function execution() {
-		
+	function execution23() {
+		const fakeGuestList = [];
+
+		let i = 0;
+
+		do {
+			let randomNumber1 = Math.floor(Math.random() * firstNameList.length);
+			let randomNumber2 = Math.floor(Math.random() * lastNameList.length);
+
+			let randomName = firstNameList[randomNumber1] + ' ' + lastNameList[randomNumber2];
+
+			if (!fakeGuestList.includes(randomName)) {
+				fakeGuestList.push(randomName);
+				i++;
+			}
+		} while (i < 3)
+
+		checker.innerHTML = fakeGuestList;
 	}
 }
 
