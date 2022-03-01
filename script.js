@@ -6,6 +6,9 @@ const footer = document.querySelector('footer');
 
 let snacksCounter = 0;
 
+const instruction = [];
+const assignment = [];
+
 /*
 SNACK 1.1
 
@@ -15,6 +18,10 @@ Il sofware stampa il maggiore.
 
 snacksCounter++;
 
+instruction.push('Inserisci due numeri tramite prompt, ne verrà stampato il maggiore.');
+assignment.push("L'utente inserisce due numeri in successione, con due prompt. Il sofware stampa il maggiore.")
+
+/*
 function snack1() {
 
 	container.innerHTML = `
@@ -60,6 +67,9 @@ Il software stampa prima la parola più corta, poi la parola più lunga.
 */
 
 snacksCounter++;
+
+instruction.push('Inserisci due parole tramite prompt. Verrà stampata prima la parola più corta e poi quella più lunga.');
+assignment.push("L'utente iserisce due parole in successione, con due prompt. Il software stampa prima la parola più corta, poi la parola più lunga.");
 
 function snack2() {
 	
@@ -116,6 +126,11 @@ Il programma stampa la somma di tutti i numeri inseriti.
 
 snacksCounter++;
 
+instruction.push("Verrà chiesto di inserire tramite prompt 10 numeri e ne verrà stampata la somma.");
+assignment.push("Il software deve chiedere per 10 volte all’utente di inserire un numero. Il programma stampa la somma di tutti i numeri inseriti.");
+
+/*
+
 function snack3() {
 		
 	container.innerHTML = `
@@ -163,6 +178,11 @@ chiedi all’utente il suo nome e comunicagli se può partecipare o no alla fest
 */
 
 snacksCounter++;
+
+instruction.push("Verrà chiesto un nome, il programma controlla che sia presente in un elenco");
+assignment.push("In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.");
+
+/*
 
 function snack4() {
 	
@@ -232,6 +252,11 @@ Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo
 
 snacksCounter++;
 
+instruction.push("Inserisci tramite prompt 6 numeri, i numeri dispari verranno inseriti in un array che sarà visualizzato a schermo.");
+assignment.push("Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.");
+
+/*
+
 function snack5() {
 	
 	container.innerHTML = `
@@ -293,6 +318,11 @@ Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre ch
 
 snacksCounter++;
 
+instruction.push("Inserisci un numero di 4 cifre tramite prompt, verrà stampata la somma delle cifre.");
+assignment.push("Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.");
+
+/*
+
 function snack6() {
 	
 	container.innerHTML = `
@@ -338,11 +368,21 @@ function snack6() {
 /*
 SNACK 1.7
 */
+
 snacksCounter++;
+
+instruction.push("");
+assignment.push("");
+
 /*
 SNACK 1.8
 */
+
 snacksCounter++;
+
+instruction.push("");
+assignment.push("");
+
 /*
 SNACK 1.9
 
@@ -350,6 +390,11 @@ Calcola la somma e la media dei primi 10 numeri.
 */
 
 snacksCounter++;
+
+instruction.push("Seleziona un numero per calcolarne la sommatoria partendo da 1");
+assignment.push("Calcola la somma e la media dei primi 10 numeri.");
+
+/*
 
 function snack9() {
 	container.innerHTML = `
@@ -416,6 +461,11 @@ Esegui questo programma in due versioni, con il for e con il while.
 
 snacksCounter++;
 
+instruction.push("Inserisci 5 numeri tramite prompt dopo aver cliccato uno dei tasti esegui. Il programma ne restituirà la somma");
+assignment.push("Il software deve chiedere per 5 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti. Esegui questo programma in due versioni, con il for e con il while.");
+
+/*
+
 function snack21() {
 	container.innerHTML = `
 		<h2>Snack 2.1</h2>
@@ -478,6 +528,11 @@ se è dispari stampa il numero successivo
 
 snacksCounter++;
 
+instruction.push("Inserisci un numero nell'input sottostante, se è pari verrà stampato, altrimenti verrà stampato il numero pari successivo.");
+assignment.push("Inserisci un numero, se è pari stampa il numero, se è dispari stampa il numero successivo.");
+
+/*
+
 function snack22() {
 	container.innerHTML = `
 		<h2>Snack 2.2</h2>
@@ -516,6 +571,11 @@ Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una list
 */
 
 snacksCounter++;
+
+instruction.push("Prendendo una lista di nomi e una di cognomi alla pressione del tasto esegui verrà generata una lista casuale di nomi e cognomi.");
+assignment.push("Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.");
+
+/*
 
 function snack23() {
 	container.innerHTML = `
@@ -606,51 +666,51 @@ function snack23() {
 	}
 }
 
+/*
+NAV SNACK BUTTONS GENERATOR
+*/
 
-// SNACK LINK BUTTONS
-
-for (let i = 1; i <= snacksCounter; i++) {
-	if (i <= 9) {
-		navLeft.innerHTML += `<button class="btn btn-light mb-3" id="snack1-${i}">Snack 1.${i}</button>`;
+for (let i = 0; i < snacksCounter; i++) {
+	let block;
+	let snack;
+	const btnSnack = document.createElement('button');
+	btnSnack.className = 'btn btn-light mb-3';
+	if (i < 9) {
+		block = 1;
+		snack = i + 1;
+		navLeft.append(btnSnack);
 	} else {
-		navRight.innerHTML += `<button class="btn btn-light mb-3" id="snack2-${i - 9}">Snack 2.${i - 9}</button>`;
+		block = 2;
+		snack = i - 8;
+		navRight.append(btnSnack);
 	}
+	btnSnack.textContent = `Snack ${block}.${snack}`;
+	// btnSnackArr.push(btnSnack);
+	btnSnack.addEventListener('click', function() {
+		snackLayoutCreator(i, block, snack);
+	});
 }
 
-const btnSnack1 = document.getElementById('snack1-1');
-btnSnack1.addEventListener('click', snack1);
+function snackLayoutCreator(index, block, snack) {
 
-const btnSnack2 = document.getElementById('snack1-2');
-btnSnack2.addEventListener('click', snack2);
+	container.innerHTML = `
+		<h2>Snack ${block}.${snack}</h2>
 
-const btnSnack3 = document.getElementById('snack1-3');
-btnSnack3.addEventListener('click', snack3);
+		<p class="mt-4">${instruction[index]}</p>
+		
+		<button id="execute-${block}-${snack}" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+	`;
+	
+	footer.innerHTML = `
+		<p class="container assignment py-4">${assignment[index]}</p>
+	`;
 
-const btnSnack4 = document.getElementById('snack1-4');
-btnSnack4.addEventListener('click', snack4);
+	checker.innerHTML = '';
+	
+	const btnExecute = document.getElementById(`execute-${block}-${snack}`);
+}
 
-const btnSnack5 = document.getElementById('snack1-5');
-btnSnack5.addEventListener('click', snack5);
-
-const btnSnack6 = document.getElementById('snack1-6');
-btnSnack6.addEventListener('click', snack6);
-
-const btnSnack7 = document.getElementById('snack1-7');
-btnSnack7.classList.add('d-none');
-// btnSnack7.addEventListener('click', snack7);
-
-const btnSnack8 = document.getElementById('snack1-8');
-// btnSnack8.addEventListener('click', snack8);
-btnSnack8.classList.add('d-none');
-
-const btnSnack9 = document.getElementById('snack1-9');
-btnSnack9.addEventListener('click', snack9);
-
-const btnSnack21 = document.getElementById('snack2-1');
-btnSnack21.addEventListener('click', snack21);
-
-const btnSnack22 = document.getElementById('snack2-2');
-btnSnack22.addEventListener('click', snack22);
-
-const btnSnack23 = document.getElementById('snack2-3');
-btnSnack23.addEventListener('click', snack23);
+let btnSnackHidden = document.querySelector('.nav-left button:nth-child(7)');
+btnSnackHidden.classList.add('d-none');
+btnSnackHidden = document.querySelector('.nav-left button:nth-child(8)');
+btnSnackHidden.classList.add('d-none');
