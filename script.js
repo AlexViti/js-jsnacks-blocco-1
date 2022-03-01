@@ -262,6 +262,11 @@ instruction.push("Seleziona un numero per calcolarne la sommatoria partendo da 1
 assignment.push("Calcola la somma e la media dei primi 10 numeri.");
 
 function snack109() {
+	container.innerHTML += `
+			<br>
+			<input type="number" value="10" step="1" class="me-2">
+			<button class="btn btn-secondary rounded-pill" id="summation-send">Invia</button>
+		`;
 
 	const inputNumber = document.querySelector('input');
 	const sumBtn = document.getElementById('summation-send');
