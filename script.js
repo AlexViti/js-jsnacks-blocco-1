@@ -1,10 +1,8 @@
 const container = document.getElementById('main-container');
-const checker = document.querySelector('.checker');
+const output = document.querySelector('.output');
 const navLeft = document.querySelector('.nav-left');
 const navRight = document.querySelector('.nav-right');
 const footer = document.querySelector('footer');
-
-let snacksCounter = 0;
 
 const instruction = [];
 const assignment = [];
@@ -16,23 +14,30 @@ L'utente inserisce due numeri in successione, con due prompt.
 Il sofware stampa il maggiore.
 */
 
-snacksCounter++;
-
 instruction.push('Inserisci due numeri tramite prompt, ne verrà stampato il maggiore.');
 assignment.push("L'utente inserisce due numeri in successione, con due prompt. Il sofware stampa il maggiore.")
 
-function snack101() {
+function snackB1S1() {
 	
-	let a = prompt('digita il primo numero');
-	let b = prompt('digita il secondo numero');
+	let firstNumber = prompt('Digita il primo numero');
+
+	while (isNaN(firstNumber)) {
+		firstNumber = prompt('Inserisci un numero');
+	}
+
+	let secondNumber = prompt('Digita il secondo numero');
+
+	while (isNaN(secondNumber)) {
+		secondNumber = prompt('Inserisci un numero');
+	}
 	
-	checker.innerHTML = 'Il numero maggiore da te inserito è: ';
-	if (a > b) {
-		checker.innerHTML += a;
-	} else if (a < b) {
-		checker.innerHTML += b;
+	output.innerHTML = 'Il numero maggiore da te inserito è: ';
+	if (firstNumber > secondNumber) {
+		output.innerHTML += firstNumber;
+	} else if (firstNumber < secondNumber) {
+		output.innerHTML += secondNumber;
 	} else {
-		checker.innerHTML = `Sono uguali: ${a}`;
+		output.innerHTML = `Sono uguali: ${firstNumber}`;
 	}
 }
 
@@ -43,31 +48,29 @@ L'utente iserisce due parole in successione, con due prompt.
 Il software stampa prima la parola più corta, poi la parola più lunga.
 */
 
-snacksCounter++;
-
 instruction.push('Inserisci due parole tramite prompt. Verrà stampata prima la parola più corta e poi quella più lunga.');
 assignment.push("L'utente iserisce due parole in successione, con due prompt. Il software stampa prima la parola più corta, poi la parola più lunga.");
 
-function snack102() {
+function snackB1S2() {
 		
-	let a = prompt('inserisci una parola');
+	let a = prompt('Inserisci una parola');
 	
 	while (a == '') {
-		a = prompt('inserisci una parola, per favore');
+		a = prompt('Inserisci una parola, per favore');
 	}
 	
-	let b = prompt("inserisci un'altra parola");
+	let b = prompt("Inserisci un'altra parola");
 	
 	while (b == '') {
-		b = prompt('inserisci una parola, per favore');
+		b = prompt('Inserisci una parola, per favore');
 	}
 	
 	if (a.length == b.length) {
-		checker.innerHTML = `Le parole hanno la stessa lunghezza: <br>${a.length}: ${a}; <br>${b.length}: ${b}`;
+		output.innerHTML = `Le parole hanno la stessa lunghezza: <br>${a.length}: ${a}; <br>${b.length}: ${b}`;
 	} else if (a.length > b.length) {
-		checker.innerHTML = `${b} ${a}`;
+		output.innerHTML = `${b} ${a}`;
 	} else {
-		checker.innerHTML = `${a} ${b}`;
+		output.innerHTML = `${a} ${b}`;
 	}
 }
 
@@ -78,12 +81,10 @@ Il software deve chiedere per 10 volte all’utente di inserire un numero.
 Il programma stampa la somma di tutti i numeri inseriti.
 */
 
-snacksCounter++;
-
 instruction.push("Verrà chiesto di inserire tramite prompt 10 numeri e ne verrà stampata la somma.");
 assignment.push("Il software deve chiedere per 10 volte all’utente di inserire un numero. Il programma stampa la somma di tutti i numeri inseriti.");
 
-function snack103() {
+function snackB1S3() {
 	
 	let sum = 0;
 	
@@ -96,7 +97,7 @@ function snack103() {
 		sum += parseInt(input);
 	}
 	
-	checker.innerHTML = `la somma dei numeri inseriti è: ${sum}`;
+	output.innerHTML = `la somma dei numeri inseriti è: ${sum}`;
 }
 
 /*
@@ -106,12 +107,10 @@ In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
 chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 */
 
-snacksCounter++;
-
 instruction.push("Verrà chiesto un nome, il programma controlla che sia presente in un elenco");
 assignment.push("In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.");
 
-function snack104() {
+function snackB1S4() {
 	
 	container.innerHTML += `		
 		<p class="mt-4">
@@ -153,9 +152,9 @@ function snack104() {
 		guestLastName = guestLastName[guestLastName.length - 1];
 		
 		if (guestFound) {
-			checker.innerHTML = `Good evening Mr. ${guestLastName}. You can give me your coat, the party is this way. Thanks you for coming.`
+			output.innerHTML = `Good evening Mr. ${guestLastName}. You can give me your coat, the party is this way. Thanks you for coming.`
 		} else {
-			checker.innerHTML = `<div>Sir, I'm terribly sorry but your name is not on the guest list. I'm afraid I'll have to ask you to leave.`
+			output.innerHTML = `Sir, I'm terribly sorry but your name is not on the guest list. I'm afraid I'll have to ask you to leave.`
 		}
 	});
 }
@@ -167,20 +166,18 @@ Crea un array vuoto.
 Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.
 */
 
-snacksCounter++;
-
 instruction.push("Inserisci tramite prompt 6 numeri, i numeri dispari verranno inseriti in un array che sarà visualizzato a schermo.");
 assignment.push("Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.");
 
-function snack105() {
+function snackB1S5() {
 	
 	let arr = [];
 	
 	for (let i = 1; i <= 6; i++) {
-		let input = parseInt(prompt(`inserisci ${i}° numero`));
+		let input = parseInt(prompt(`Inserisci ${i}° numero`));
 		
 		while (isNaN(input) || input == '') {
-			input = parseInt(prompt('inserisci un numero, per favore'));
+			input = parseInt(prompt('Inserisci un numero, per favore'));
 		}
 		
 		if (input % 2 == 1) {
@@ -189,11 +186,11 @@ function snack105() {
 	}
 	
 	if (arr.length == 0) {
-		checker.innerHTML = 'Non hai inserito numeri dispari';	
+		output.innerHTML = 'Non hai inserito numeri dispari';	
 	} else {
-		checker.innerHTML = 'Numeri dispari inseriti: ';
+		output.innerHTML = 'Numeri dispari inseriti: ';
 		const list = document.createElement('ul');
-		checker.append(list);
+		output.append(list);
 		for (let i = 0; i < arr.length; i++) {
 			const listItem = document.createElement('li');
 			listItem.innerHTML = arr[i];
@@ -208,12 +205,10 @@ SNACK 1.6
 Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
 */
 
-snacksCounter++;
-
 instruction.push("Inserisci un numero di 4 cifre tramite prompt, verrà stampata la somma delle cifre.");
 assignment.push("Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.");
 
-function snack106() {
+function snackB1S6() {
 	
 	do {
 		input = prompt('inserisci un numero di 4 cifre');
@@ -229,14 +224,12 @@ function snack106() {
 	
 	inputArr.forEach(digitSum);
 	
-	checker.innerHTML = inputDigitSum;
+	output.innerHTML = inputDigitSum;
 }
 
 /*
 SNACK 1.7
 */
-
-snacksCounter++;
 
 instruction.push("");
 assignment.push("");
@@ -244,8 +237,6 @@ assignment.push("");
 /*
 SNACK 1.8
 */
-
-snacksCounter++;
 
 instruction.push("");
 assignment.push("");
@@ -256,12 +247,10 @@ SNACK 1.9
 Calcola la somma e la media dei primi 10 numeri.
 */
 
-snacksCounter++;
-
 instruction.push("Seleziona un numero per calcolarne la sommatoria partendo da 1");
 assignment.push("Calcola la somma e la media dei primi 10 numeri.");
 
-function snack109() {
+function snackB1S9() {
 	container.innerHTML += `
 			<br>
 			<input type="number" value="10" step="1" class="me-2">
@@ -289,7 +278,7 @@ function snack109() {
 		
 		let average = sum / upperBound;
 	
-		checker.innerHTML = `La somma dei primi ${upperBound} numeri è: ${sum}, la media è: ${average}.`;
+		output.innerHTML = `La somma dei primi ${upperBound} numeri è: ${sum}, la media è: ${average}.`;
 	}
 }
 
@@ -305,13 +294,11 @@ Il programma stampa la somma di tutti i numeri inseriti.
 Esegui questo programma in due versioni, con il for e con il while.
 */
 
-snacksCounter++;
-
 instruction.push("Inserisci 5 numeri tramite prompt dopo aver cliccato uno dei tasti esegui. Il programma ne restituirà la somma");
 assignment.push("Il software deve chiedere per 5 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti. Esegui questo programma in due versioni, con il for e con il while.");
 
 
-function snack201() {
+function snackB2S1() {
 	container.innerHTML = `
 		<h2>Snack 2.1</h2>
 
@@ -327,7 +314,7 @@ function snack201() {
 		</p>
 	`;
 
-	checker.innerHTML = '';
+	output.innerHTML = '';
 	
 	const btnExecuteFor = document.getElementById('execute-2-1-for');
 	btnExecuteFor.addEventListener('click', executionFor);
@@ -346,7 +333,7 @@ function snack201() {
 			}
 			sum += inputNumber;
 		}
-		checker.innerHTML = `La somma dei numeri immessi è: ${sum}`;
+		output.innerHTML = `La somma dei numeri immessi è: ${sum}`;
 	}
 
 	function executionWhile() {
@@ -360,7 +347,7 @@ function snack201() {
 			}
 			sum += inputNumber
 		} while (i < 5)
-		checker.innerHTML = `La somma dei numeri immessi è: ${sum}`;
+		output.innerHTML = `La somma dei numeri immessi è: ${sum}`;
 	}
 }
 
@@ -371,12 +358,10 @@ Inserisci un numero, se è pari stampa il numero,
 se è dispari stampa il numero successivo
 */
 
-snacksCounter++;
-
 instruction.push("Inserisci un numero nell'input sottostante, se è pari verrà stampato, altrimenti verrà stampato il numero pari successivo.");
 assignment.push("Inserisci un numero, se è pari stampa il numero, se è dispari stampa il numero successivo.");
 
-function snack202() {
+function snackB2S2() {
 	container.innerHTML = `
 		<h2>Snack 2.2</h2>
 
@@ -392,7 +377,7 @@ function snack202() {
 		</p>
 	`;
 
-	checker.innerHTML = '';
+	output.innerHTML = '';
 	
 	const btnExecute = document.getElementById('execute-2-2');
 	btnExecute.addEventListener('click', execution);
@@ -400,9 +385,9 @@ function snack202() {
 
 	function execution() {
 		if (inputNumber.value % 2 == 0) {
-			checker.innerHTML = `Il numero era pari: ${inputNumber.value}`;
+			output.innerHTML = `Il numero era pari: ${inputNumber.value}`;
 		} else {
-			checker.innerHTML = `Il numero era dispari, li numero successivo è: ${parseInt(inputNumber.value) + 1}`;
+			output.innerHTML = `Il numero era dispari, li numero successivo è: ${parseInt(inputNumber.value) + 1}`;
 		}
 	}
 }
@@ -413,12 +398,10 @@ SNACK 2.3
 Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.
 */
 
-snacksCounter++;
-
 instruction.push("Prendendo una lista di nomi e una di cognomi alla pressione del tasto esegui verrà generata una lista casuale di nomi e cognomi.");
 assignment.push("Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.");
 
-function snack203() {
+function snackB2S3() {
 
 	const firstNameList = [
 		'Liam',
@@ -466,7 +449,7 @@ function snack203() {
 		'Martin'
 	];
 	
-	checker.innerHTML = `<ol></ol>`;
+	output.innerHTML = `<ol></ol>`;
 	let outputList = document.querySelector('ol');
 	const fakeGuestList = [];
 
@@ -490,7 +473,7 @@ function snack203() {
 NAV SNACK BUTTONS GENERATOR
 */
 
-for (let i = 0; i < snacksCounter; i++) {
+for (let i = 0; i < assignment.length; i++) {
 	let block;
 	let snack;
 	const btnSnack = document.createElement('button');
@@ -504,7 +487,7 @@ for (let i = 0; i < snacksCounter; i++) {
 		snack = i - 8;
 		navRight.append(btnSnack);
 	}
-	btnSnack.textContent = `Snack ${block}.${snack}`;
+	btnSnack.innerHTML = `<span class="d-none d-sm-inline">Snack</span> ${block}.${snack}`;
 	btnSnack.addEventListener('click', function() {
 		snackLayoutCreator(i, block, snack);
 	});
@@ -524,13 +507,14 @@ function snackLayoutCreator(index, block, snack) {
 		<p class="container assignment py-4">${assignment[index]}</p>
 	`;
 
-	checker.innerHTML = '';
+	output.innerHTML = '';
 	
 	const btnExecute = document.getElementById(`execute-${block}-${snack}`);
-	btnExecute.addEventListener('click', window[`snack${block}0${snack}`]);
+	btnExecute.addEventListener('click', window[`snackB${block}S${snack}`]);
 }
 
 let btnSnackHidden = document.querySelector('.nav-left button:nth-child(7)');
 btnSnackHidden.classList.add('d-none');
+
 btnSnackHidden = document.querySelector('.nav-left button:nth-child(8)');
 btnSnackHidden.classList.add('d-none');
