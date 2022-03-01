@@ -295,6 +295,8 @@ function snack6() {
 	container.innerHTML = `
 		<h2>Snack 1.6</h2>
 
+		<p class="mt-4">Inserisci un numero di 4 cifre tramite prompt, verrà stampata la somma delle cifre.</p>
+
 		<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 
