@@ -23,13 +23,13 @@ function snack1() {
 		<p class="mt-4">Inserisci due numeri tramite prompt, ne verrà stampato il maggiore.</p>
 		
 		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-	`
+	`;
 	
 	footer.innerHTML = `
 	<p class="container assignment py-4">
 		L'utente inserisce due numeri in successione, con due prompt. Il sofware stampa il maggiore.
 	</p>
-	`
+	`;
 
 	checker.innerHTML = '';
 	
@@ -41,7 +41,7 @@ function snack1() {
 		let a = prompt('digita il primo numero');
 		let b = prompt('digita il secondo numero');
 		
-		checker.innerHTML = 'Il numero maggiore da te inserito è: '
+		checker.innerHTML = 'Il numero maggiore da te inserito è: ';
 		if (a > b) {
 			checker.innerHTML += a;
 		} else if (a < b) {
@@ -69,12 +69,13 @@ function snack2() {
 		<p class="mt-4">Inserisci due parole tramite prompt. Verrà stampata prima la parola più corta e poi quella più lunga.</p>
 
 		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-	`
+	`;
+
 	footer.innerHTML = `
 		<p class="container assignment py-4">
 			L'utente iserisce due parole in successione, con due prompt. Il software stampa prima la parola più corta, poi la parola più lunga.
 		</p>
-	`
+	`;
 	
 	checker.innerHTML = '';
 	
@@ -123,13 +124,13 @@ function snack3() {
 		<p class="mt-4">Verrà chiesto di inserire tramite prompt 10 numeri e ne verrà stampata la somma.</p>
 
 		<button id="execute-3" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-	`
+	`;
 
 	footer.innerHTML = `
 		<p class="container assignment py-4">
 			Il software deve chiedere per 10 volte all’utente di inserire un numero. Il programma stampa la somma di tutti i numeri inseriti.
 		</p>
-	`
+	`;
 	
 	checker.innerHTML = '';
 	
@@ -175,14 +176,14 @@ function snack4() {
 		
 		<input type="text" name="guest" id="guest">
 		<button class="check btn btn-dark rounded-pill my-3">Check</button>
-	`
+	`;
 
 	footer.innerHTML = `
 		<p class="container assignment py-4">
 			In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 		</p>
-	`
-	
+	`;
+
 	checker.innerHTML = '';
 	
 	let guestArr = [
@@ -239,13 +240,13 @@ function snack5() {
 		<p class="mt-4">Inserisci tramite prompt 6 numeri, i numeri dispari verranno inseriti in un array che sarà visualizzato a schermo.</p>
 
 		<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-	`
+	`;
 
 	footer.innerHTML =`
 		<p class="container assignment py-4">
 			Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.
 		</p>
-	`
+	`;
 
 	checker.innerHTML = '';
 	
@@ -300,13 +301,13 @@ function snack6() {
 		<p class="mt-4">Inserisci un numero di 4 cifre tramite prompt, verrà stampata la somma delle cifre.</p>
 
 		<button id="execute-6" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-	`
+	`;
 
 	footer.innerHTML = `
 		<p class="container assignment py-4">
 			Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
 		</p>
-	`
+	`;
 
 	checker.innerHTML = '';
 	
@@ -355,13 +356,13 @@ function snack9() {
 		<h2>Snack 1.9</h2>
 
 		<button id="execute-9" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-	`
+	`;
 	
 	footer.innerHTML = `
 		<p class="container assignment py-4">
 			Calcola la somma e la media dei primi 10 numeri.
 		</p>
-	`
+	`;
 
 	checker.innerHTML = '';
 	
@@ -373,11 +374,11 @@ function snack9() {
 		container.innerHTML += `
 			<div class="my-3">Seleziona un numero per calcolarne la sommatoria partendo da 1</div>
 			<input type="number" value="10" class="me-2"></input><button class="btn btn-secondary rounded-pill" id="summation-send">Invia</button>
-		`
+		`;
 
 		const inputNumber = document.querySelector('input');
 		const sumBtn = document.getElementById('summation-send');
-		sumBtn.addEventListener('click', getInput)
+		sumBtn.addEventListener('click', getInput);
 		
 		function getInput() {
 			let upperBound = inputNumber.value;
@@ -396,7 +397,7 @@ function snack9() {
 			
 			let average = sum / upperBound;
 		
-			checker.innerHTML = `La somma dei primi ${upperBound} numeri è: ${sum}, la media è: ${average}.`
+			checker.innerHTML = `La somma dei primi ${upperBound} numeri è: ${sum}, la media è: ${average}.`;
 		}
 	}
 }
@@ -423,13 +424,13 @@ function snack21() {
 
 		<button id="execute-2-1-for" class='btn btn-dark rounded-pill my-3'>Esegui con il ciclo for</button>
 		<button id="execute-2-1-while" class='btn btn-dark rounded-pill my-3'>Esegui con il ciclo while</button>
-	`
+	`;
 	
 	footer.innerHTML = `
 		<p class="container assignment py-4">
 			Il software deve chiedere per 5 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti. Esegui questo programma in due versioni, con il for e con il while.
 		</p>
-	`
+	`;
 
 	checker.innerHTML = '';
 	
@@ -448,7 +449,7 @@ function snack21() {
 			while (isNaN(inputNumber)) {
 				inputNumber = parseInt(prompt('Inserisci un numero per cortesia'));
 			}
-			sum += inputNumber
+			sum += inputNumber;
 		}
 		checker.innerHTML = `La somma dei numeri immessi è: ${sum}`;
 	}
@@ -485,13 +486,13 @@ function snack22() {
 
 		<input type="number" value="0" min="0" step="1" class="me-2">
 		<button id="execute-2-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-	`
+	`;
 	
 	footer.innerHTML = `
 		<p class="container assignment py-4">
 			Inserisci un numero, se è pari stampa il numero, se è dispari stampa il numero successivo.
 		</p>
-	`
+	`;
 
 	checker.innerHTML = '';
 	
@@ -523,13 +524,13 @@ function snack23() {
 		<p class="mt-4">Prendendo una lista di nomi e una di cognomi alla pressione del tasto esegui verrà generata una lista casuale di nomi e cognomi.</p>
 
 		<button id="execute-2-3" class='btn btn-dark rounded-pill my-3'>Esegui</button>
-	`
+	`;
 	
 	footer.innerHTML = `
 		<p class="container assignment py-4">
 			Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.
 		</p>
-	`
+	`;
 
 	checker.innerHTML = '';
 	
@@ -557,7 +558,7 @@ function snack23() {
 		'Evelyn',
 		'Alexander',
 		'Harper'
-	]
+	];
 
 	const lastNameList = [
 		'Smith',
@@ -580,12 +581,12 @@ function snack23() {
 		'Moore',
 		'Jackson',
 		'Martin'
-	]
+	];
 
 	function execution23() {
 
 		checker.innerHTML = `<ol></ol>`;
-		let outputList = document.querySelector('ol')
+		let outputList = document.querySelector('ol');
 		const fakeGuestList = [];
 
 		do {
