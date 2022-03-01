@@ -19,6 +19,8 @@ function snack1() {
 
 	container.innerHTML = `
 	<h2>Snack 1.1</h2>
+
+	<p class="mt-4">Inserisci due numeri tramite prompt, ne verrà stampato il maggiore.</p>
 	
 	<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
@@ -45,7 +47,7 @@ function snack1() {
 		} else if (a < b) {
 			checker.innerHTML += b;
 		} else {
-			checker.innerHTML = 'sono uguali';
+			checker.innerHTML = `Sono uguali: ${a}`;
 		}
 	}
 }
@@ -63,6 +65,8 @@ function snack2() {
 	
 	container.innerHTML = `
 		<h2>Snack 1.2</h2>
+
+		<p class="mt-4">Inserisci due parole tramite prompt. Verrà stampata prima la parola più corta e poi quella più lunga.</p>
 
 		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
@@ -116,14 +120,14 @@ function snack3() {
 	container.innerHTML = `
 		<h2>Snack 1.3</h2>
 
-
+		<p class="mt-4">Verrà chiesto di inserire tramite prompt 10 numeri e ne verrà stampata la somma.</p>
 
 		<button id="execute-3" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 
 	footer.innerHTML = `
 		<p class="container assignment py-4">
-			Il software deve chiedere per 10 volte all’utente di inserire un numero.	Il programma stampa la somma di tutti i numeri inseriti.
+			Il software deve chiedere per 10 volte all’utente di inserire un numero. Il programma stampa la somma di tutti i numeri inseriti.
 		</p>
 	`
 	
@@ -230,6 +234,8 @@ function snack5() {
 	container.innerHTML = `
 		<h2>Snack 1.5</h2>
 
+		<p class="mt-4">Inserisci tramite prompt 6 numeri, i numeri dispari verranno inseriti in un array che sarà visualizzato a schermo.</p>
+
 		<button id="execute-5" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 
@@ -263,7 +269,14 @@ function snack5() {
 		if (arr.length == 0) {
 			checker.innerHTML = 'Non hai inserito numeri dispari';	
 		} else {
-			checker.innerHTML = 'Numeri dispari inseriti: ' + arr;
+			checker.innerHTML = 'Numeri dispari inseriti: ';
+			const list = document.createElement('ul');
+			checker.append(list);
+			for (let i = 0; i < arr.length; i++) {
+				const listItem = document.createElement('li');
+				listItem.innerHTML = arr[i];
+				list.append(listItem);
+			}
 		}
 	}
 	
