@@ -18,11 +18,11 @@ snacksCounter++;
 function snack1() {
 
 	container.innerHTML = `
-	<h2>Snack 1.1</h2>
+		<h2>Snack 1.1</h2>
 
-	<p class="mt-4">Inserisci due numeri tramite prompt, ne verrà stampato il maggiore.</p>
-	
-	<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
+		<p class="mt-4">Inserisci due numeri tramite prompt, ne verrà stampato il maggiore.</p>
+		
+		<button id="execute-1" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	
 	footer.innerHTML = `
@@ -71,9 +71,9 @@ function snack2() {
 		<button id="execute-2" class='btn btn-dark rounded-pill my-3'>Esegui</button>
 	`
 	footer.innerHTML = `
-	<p class="container assignment py-4">
-		L'utente iserisce due parole in successione, con due prompt. Il software stampa prima la parola più corta, poi la parola più lunga.
-	</p>
+		<p class="container assignment py-4">
+			L'utente iserisce due parole in successione, con due prompt. Il software stampa prima la parola più corta, poi la parola più lunga.
+		</p>
 	`
 	
 	checker.innerHTML = '';
@@ -95,7 +95,7 @@ function snack2() {
 			b = prompt('inserisci una parola, per favore');
 		}
 		
-		if(a.length == b.length) {
+		if (a.length == b.length) {
 			checker.innerHTML = `Le parole hanno la stessa lunghezza: <br>${a.length}: ${a}; <br>${b.length}: ${b}`;
 		} else if (a.length > b.length) {
 			checker.innerHTML = `${b} ${a}`;
@@ -176,11 +176,13 @@ function snack4() {
 		<input type="text" name="guest" id="guest">
 		<button class="check btn btn-dark rounded-pill my-3">Check</button>
 	`
+
 	footer.innerHTML = `
 		<p class="container assignment py-4">
 			In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 		</p>
 	`
+	
 	checker.innerHTML = '';
 	
 	let guestArr = [
