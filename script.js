@@ -271,6 +271,7 @@ function snack5() {
 
 /*
 SNACK 1.6
+
 Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
 */
 
@@ -317,12 +318,20 @@ function snack6() {
 }
 
 /*
+SNACK 1.7
+*/
+snacksCounter++;
+/*
+SNACK 1.8
+*/
+snacksCounter++;
+/*
 SNACK 1.9
 
 Calcola la somma e la media dei primi 10 numeri.
 */
 
-snacksCounter += 3;
+snacksCounter++;
 
 function snack9() {
 	container.innerHTML = `
@@ -380,7 +389,7 @@ SECOND BLOCK
 */
 
 /*
-Snack 2.1
+SNACK 2.1
 
 Il software deve chiedere per 5 volte all’utente di inserire un numero.
 Il programma stampa la somma di tutti i numeri inseriti.
@@ -443,7 +452,7 @@ function snack21() {
 }
 
 /*
-Snack 2.2
+SNACK 2.2
 
 Inserisci un numero, se è pari stampa il numero,
 se è dispari stampa il numero successivo
@@ -483,7 +492,7 @@ function snack22() {
 }
 
 /*
-Snack 2.3
+SNACK 2.3
 
 Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi, Gatsby vuole generare una falsa lista di 3 invitati.
 */
@@ -562,8 +571,6 @@ function snack23() {
 		let outputList = document.querySelector('ol')
 		const fakeGuestList = [];
 
-		let i = 0;
-
 		do {
 			let randomNumber1 = Math.floor(Math.random() * firstNameList.length);
 			let randomNumber2 = Math.floor(Math.random() * lastNameList.length);
@@ -572,12 +579,11 @@ function snack23() {
 
 			if (!fakeGuestList.includes(randomName)) {
 				fakeGuestList.push(randomName);
-				i++;
 			}
-		} while (i < 3)
+		} while (fakeGuestList.length < 3)
 
-		for (let j = 0; j < fakeGuestList.length; j++) {
-			outputList.innerHTML += `<li>${fakeGuestList[j]}</li>`;
+		for (let i = 0; i < fakeGuestList.length; i++) {
+			outputList.innerHTML += `<li>${fakeGuestList[i]}</li>`;
 		}
 	}
 }
